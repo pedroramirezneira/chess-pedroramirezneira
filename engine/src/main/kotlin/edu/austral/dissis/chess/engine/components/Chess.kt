@@ -1,6 +1,8 @@
 package edu.austral.dissis.chess.engine.components
 
 import edu.austral.dissis.chess.engine.interfaces.*
+import edu.austral.dissis.chess.engine.models.P
+import edu.austral.dissis.chess.engine.models.Rules
 
 class Chess(
     override val states: List<Game> = listOf(),
@@ -8,7 +10,7 @@ class Chess(
     override val rules: Rules,
     override val `current player`: String
 ) : Game {
-    override fun `change rules`(rules: Rules): Chess {
+    override infix fun `change rules`(rules: Rules): Chess {
         TODO("Not yet implemented")
     }
 

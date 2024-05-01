@@ -1,6 +1,6 @@
 package edu.austral.dissis.chess.engine.components.movements
 
-import edu.austral.dissis.chess.engine.components.P
+import edu.austral.dissis.chess.engine.models.P
 import edu.austral.dissis.chess.engine.interfaces.Board
 import edu.austral.dissis.chess.engine.interfaces.Coordinate
 import edu.austral.dissis.chess.engine.interfaces.Game
@@ -35,9 +35,9 @@ class Castling : Movement {
     override fun execute(coordinates: Pair<Coordinate, Coordinate>, game: Game): Board {
         val from = coordinates.first
         val to = coordinates.second
-        val state = game.board `move piece` { P(from.x, from.y) to P(to.x, to.y) }
+        val state = game.board `move piece from` { P(from.x, from.y) to P(to.x, to.y) }
         val rookFromX = if (from.x < to.x) 7 else 0
         val rookToX = if (from.x < to.x) from.x - 1 else from.x + 1
-        return state `move piece` { P(rookFromX, from.y) to P(rookToX, to.y) }
+        return state `move piece from` { P(rookFromX, from.y) to P(rookToX, to.y) }
     }
 }
