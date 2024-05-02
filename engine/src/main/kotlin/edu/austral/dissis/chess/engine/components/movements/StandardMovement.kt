@@ -5,7 +5,7 @@ import edu.austral.dissis.chess.engine.interfaces.Coordinate
 import edu.austral.dissis.chess.engine.interfaces.Game
 import edu.austral.dissis.chess.engine.interfaces.Movement
 
-class StandardMovement(val pieceType: String, val distance: Int, val coordinate: Coordinate) : Movement {
+class StandardMovement(val pieceType: String, val coordinate: Coordinate, val distance: Int? = null) : Movement {
     override fun verify(coordinates: Pair<Coordinate, Coordinate>, game: Game): Boolean {
         TODO("Not yet implemented")
     }

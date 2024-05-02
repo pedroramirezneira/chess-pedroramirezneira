@@ -1,6 +1,10 @@
 package edu.austral.dissis.chess.engine.components
 
 import com.google.gson.Gson
+import edu.austral.dissis.chess.engine.components.movements.Castling
+import edu.austral.dissis.chess.engine.components.movements.StandardMovement
+import edu.austral.dissis.chess.engine.components.validations.Check
+import edu.austral.dissis.chess.engine.components.winconditions.CheckMate
 import edu.austral.dissis.chess.engine.models.ChessData
 import edu.austral.dissis.chess.engine.interfaces.*
 import edu.austral.dissis.chess.engine.data.P
@@ -14,11 +18,19 @@ open class Chess(
     override val `current player`: String,
     override val states: List<Game> = listOf(),
 ) : Game {
-    override infix fun `change rules`(rules: Rules): Chess {
-        TODO("Not yet implemented")
+    override infix fun `change rules`(block: RulesBuilder.() -> Unit): Chess {
+        val builder = RulesBuilder()
+        builder.block()
+        val newRules = builder.build()
+        val newMovements = rules.movements + newRules.movements
+        val newValidations = rules.validations + newRules.validations
+        val newWinConditions = rules.`win conditions` + newRules.`win conditions`
+        val updatedRules = Rules(newMovements, newValidations, newWinConditions)
+        return Chess(board, updatedRules, `current player`, states)
     }
 
     override infix fun `move from`(block: () -> Pair<Coordinate, Coordinate>): Chess {
+        if (block().first == block().second) return this
         val piece = (board `get piece` block().first) ?: return this
         val isPlayersPiece = piece.color == `current player`
         if (!isPlayersPiece) {
@@ -63,10 +75,4 @@ open class Chess(
             return Chess `from json` config
         }
     }
-}
-
-fun main() {
-    val chess = Chess `from file` "config.json"
-    println(chess.board.toString())
-    chess `move from` { P(0, 1) to P(0, 2) }
 }

@@ -20,7 +20,7 @@ data class BoardData(
 data class PieceData(
     val type: String,
     @SerializedName("initial_distance") val initialDistance: Int?,
-    @SerializedName("movement_distance") val movementDistance: Int,
+    @SerializedName("movement_distance") val movementDistance: Int?,
     val ghost: Boolean?,
     @SerializedName("movement_vectors") val movementVectors: List<String>,
     @SerializedName("attack_vectors") val attackVectors: List<String>?,

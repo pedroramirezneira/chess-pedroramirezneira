@@ -20,21 +20,21 @@ data class Rules(
                     val x = components[0].toInt()
                     val y = components[1].toInt()
                     if (piece.attackVectors != null) {
-                        PeacefulMovement(piece.type, piece.movementDistance, P(x, y))
+                        PeacefulMovement(piece.type, P(x, y), piece.movementDistance)
                     } else {
-                        StandardMovement(piece.type, piece.movementDistance, P(x, y))
+                        StandardMovement(piece.type, P(x, y), piece.movementDistance)
                     }
                 } + (piece.attackVectors?.map { vector ->
                     val components = vector.split(", ")
                     val x = components[0].toInt()
                     val y = components[1].toInt()
-                    AttackMovement(piece.type, piece.movementDistance, P(x, y))
+                    AttackMovement(piece.type, P(x, y), piece.movementDistance)
                 } ?: emptyList()) + if (piece.initialDistance != null) {
                     piece.movementVectors.map { vector ->
                         val components = vector.split(", ")
                         val x = components[0].toInt()
                         val y = components[1].toInt()
-                        InitialMovement(piece.type, piece.initialDistance, P(x, y))
+                        InitialMovement(piece.type, P(x, y), piece.initialDistance)
                     }
                 } else {
                     emptyList()
