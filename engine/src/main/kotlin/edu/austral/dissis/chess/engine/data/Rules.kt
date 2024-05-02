@@ -16,14 +16,7 @@ data class Rules(
         infix fun from(pieces: List<PieceData>): Rules {
             val movements: List<Movement> = pieces.flatMap { piece ->
                 piece.movementVectors.map { vector ->
-                    val components = vector.split(", ")
-                    val x = components[0].toInt()
-                    val y = components[1].toInt()
-                    if (piece.attackVectors != null) {
-                        PeacefulMovement(piece.type, P(x, y), piece.movementDistance)
-                    } else {
-                        StandardMovement(piece.type, P(x, y), piece.movementDistance)
-                    }
+                    movement(piece, vector)
                 } + (piece.attackVectors?.map { vector ->
                     val components = vector.split(", ")
                     val x = components[0].toInt()
@@ -43,6 +36,21 @@ data class Rules(
             val validations: List<Validation> = emptyList()
             val winConditions: List<WinCondition> = emptyList()
             return Rules(movements, validations, winConditions)
+        }
+
+        fun empty(): Rules {
+            return Rules(emptyList(), emptyList(), emptyList())
+        }
+
+        private fun movement(piece: PieceData, vector: String): Movement {
+            val components = vector.split(", ")
+            val x = components[0].toInt()
+            val y = components[1].toInt()
+            return if (piece.attackVectors != null) {
+                PeacefulMovement(piece.type, P(x, y), piece.movementDistance)
+            } else {
+                StandardMovement(piece.type, P(x, y), piece.movementDistance)
+            }
         }
     }
 }

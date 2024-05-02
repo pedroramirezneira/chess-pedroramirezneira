@@ -47,7 +47,7 @@ class ChessBoard(override val size: Size, private val tiles: List<List<Piece?>>)
     override fun toString(): String {
         val board: List<String> = tiles.reversed().map { column ->
             column.joinToString(", ") { piece ->
-                piece?.let { "${it.type} ${it.color}" } ?: "   ◼   "
+                piece?.let { "${it.type} ${if (it.color) "white" else "black"}" } ?: "   ◼   "
             }
         }
         return board.joinToString("\n")
@@ -80,9 +80,9 @@ class ChessBoard(override val size: Size, private val tiles: List<List<Piece?>>)
                     val whitePiece = boardData.whiteArrangement.getOrNull(y)?.getOrNull(x)
                     val blackPiece = blackArrangement.getOrNull(y)?.getOrNull(x)
                     if (whitePiece != null) {
-                        Piece(whitePiece, boardData.whiteColor)
+                        Piece(whitePiece, true)
                     } else if (blackPiece != null) {
-                        Piece(blackPiece, boardData.blackColor)
+                        Piece(blackPiece, false)
                     } else {
                         null
                     }

@@ -10,7 +10,7 @@ class Exam {
     @TestFactory
     fun `required exam tests`(): Stream<DynamicTest> {
 
-        return GameTester(DummyTestGameRunner()).test()
+        return GameTester(Runner()).test()
     }
 
 }

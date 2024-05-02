@@ -8,8 +8,8 @@ import edu.austral.dissis.chess.engine.interfaces.Movement
 class PeacefulMovement(private val pieceType: String, val coordinate: Coordinate, private val distance: Int? = null) :
     Movement {
     override fun verify(coordinates: Pair<Coordinate, Coordinate>, game: Game): Boolean {
-        val from = coordinates.first
-        val piece = game.board `get piece` from
+        val to = coordinates.second
+        val piece = game.board `get piece` to
         if (piece != null) {
             return false
         }

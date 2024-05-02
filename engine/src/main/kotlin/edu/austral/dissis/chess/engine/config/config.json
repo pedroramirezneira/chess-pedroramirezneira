@@ -7,30 +7,30 @@
     "mirror": true,
     "white_arrangement": [
       [
-        "♜",
-        "♞",
-        "♝",
-        "♛",
-        "♚",
-        "♝",
-        "♞",
-        "♜"
+        "rook",
+        "knight",
+        "bishop",
+        "queen",
+        "king",
+        "bishop",
+        "knight",
+        "rook"
       ],
       [
-        "♟",
-        "♟",
-        "♟",
-        "♟",
-        "♟",
-        "♟",
-        "♟",
-        "♟"
+        "pawn",
+        "pawn",
+        "pawn",
+        "pawn",
+        "pawn",
+        "pawn",
+        "pawn",
+        "pawn"
       ]
     ]
   },
   "pieces": [
     {
-      "type": "♚",
+      "type": "king",
       "movement_distance": 1,
       "movement_vectors": [
         "1, 0",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "type": "♛",
+      "type": "queen",
       "movement_vectors": [
         "1, 0",
         "-1, 0",
@@ -57,7 +57,7 @@
       ]
     },
     {
-      "type": "♜",
+      "type": "rook",
       "movement_vectors": [
         "1, 0",
         "-1, 0",
@@ -66,7 +66,7 @@
       ]
     },
     {
-      "type": "♝",
+      "type": "bishop",
       "movement_vectors": [
         "1, 1",
         "1, -1",
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "type": "♞",
+      "type": "knight",
       "movement_distance": 1,
       "movement_vectors": [
         "2, 1",
@@ -89,7 +89,7 @@
       ]
     },
     {
-      "type": "♟",
+      "type": "pawn",
       "initial_distance": 2,
       "movement_distance": 1,
       "movement_vectors": [

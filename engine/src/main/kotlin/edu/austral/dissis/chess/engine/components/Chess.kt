@@ -15,7 +15,7 @@ import kotlin.io.path.Path
 open class Chess(
     override val board: Board,
     override val rules: Rules,
-    override val `current player`: String,
+    override val `current player`: Boolean,
     override val states: List<Game> = listOf(),
 ) : Game {
     override infix fun `change rules`(block: RulesBuilder.() -> Unit): Chess {
@@ -33,6 +33,9 @@ open class Chess(
         if (block().first == block().second) return this
         val piece = (board `get piece` block().first) ?: return this
         val isPlayersPiece = piece.color == `current player`
+        println(block().first)
+        println(block().second)
+        println(board.toString())
         if (!isPlayersPiece) {
             return this
         }
@@ -40,11 +43,12 @@ open class Chess(
             movement.verify(block(), this)
         }
         if (verifiedMovement == null) {
+            println("no movement")
             return this
         }
         val board = verifiedMovement.execute(block(), this)
-        val possibleGame = Chess(board, rules, `current player`, states)
-        val isValid = rules.validations.all { validation ->
+        val possibleGame = Chess(board, rules, `current player`, states + this)
+        val isValid = possibleGame.rules.validations.all { validation ->
             validation verify possibleGame
         }
         if (!isValid) {
@@ -56,7 +60,8 @@ open class Chess(
         if (verifiedWinCondition != null) {
             return ChessEnded(this)
         }
-        return Chess(board, rules, `current player`, states + this)
+        println("si")
+        return Chess(board, rules, !`current player`, states + this)
     }
 
     companion object {
@@ -65,14 +70,7 @@ open class Chess(
             val data = gson.fromJson(json, ChessData::class.java)
             val board = ChessBoard from data.board
             val rules = Rules from data.pieces
-            return Chess(board, rules, data.board.whiteColor)
-        }
-
-        infix fun `from file`(file: String): Chess {
-            val path = "engine/src/main/kotlin/edu/austral/dissis/chess/engine/config/$file"
-            val absolutePath = Path("").toAbsolutePath().resolve(path)
-            val config = File(absolutePath.toUri()).readText()
-            return Chess `from json` config
+            return Chess(board, rules, true)
         }
     }
 }

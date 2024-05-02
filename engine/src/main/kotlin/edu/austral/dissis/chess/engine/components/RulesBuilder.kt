@@ -23,6 +23,13 @@ class RulesBuilder {
         winConditions.add(winCondition)
     }
 
+    infix fun `from json`(json: String) {
+        val game = Chess `from json` json
+        movements.addAll(game.rules.movements)
+        validations.addAll(game.rules.validations)
+        winConditions.addAll(game.rules.`win conditions`)
+    }
+
     fun build(): Rules {
         return Rules(movements, validations, winConditions)
     }
