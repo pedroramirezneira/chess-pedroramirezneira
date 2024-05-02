@@ -21,9 +21,12 @@ class Castling : Movement {
             return false
         }
         val kingHasMoved = Util.pieceHasMoved(from, game)
-        val rookX = if (from.x < to.x) 7 else 0
-        val rookHasMoved = Util.pieceHasMoved(P(rookX, from.y), game)
-        return !kingHasMoved && !rookHasMoved
+        val rookFromX = if (from.x < to.x) 7 else 0
+        val rookToX = if (rookFromX == 7) 5 else 3
+        val vector = if (rookToX == 3) P(1, 0) else P(-1, 0)
+        val rookHasMoved = Util.pieceHasMoved(P(rookFromX, from.y), game)
+        val roadBlocked = Util.roadBlocked(vector, (P(rookFromX, from.y) to P(rookToX, to.y)), game)
+        return !kingHasMoved && !rookHasMoved && !roadBlocked
     }
 
     override fun execute(coordinates: Pair<Coordinate, Coordinate>, game: Game): Board {
@@ -31,7 +34,8 @@ class Castling : Movement {
         val to = coordinates.second
         val state = game.board `move piece from` { P(from.x, from.y) to P(to.x, to.y) }
         val rookFromX = if (from.x < to.x) 7 else 0
-        val rookToX = if (from.x < to.x) from.x - 1 else from.x + 1
+        println(rookFromX)
+        val rookToX = if (from.x < to.x) from.x + 1 else from.x - 1
         return state `move piece from` { P(rookFromX, from.y) to P(rookToX, to.y) }
     }
 }

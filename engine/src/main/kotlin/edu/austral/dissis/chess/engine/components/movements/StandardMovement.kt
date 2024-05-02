@@ -1,6 +1,6 @@
 package edu.austral.dissis.chess.engine.components.movements
 
-import edu.austral.dissis.chess.engine.data.P
+import edu.austral.dissis.chess.engine.components.Util
 import edu.austral.dissis.chess.engine.interfaces.Board
 import edu.austral.dissis.chess.engine.interfaces.Coordinate
 import edu.austral.dissis.chess.engine.interfaces.Game
@@ -10,11 +10,13 @@ import kotlin.math.abs
 class StandardMovement(private val pieceType: String, val coordinate: Coordinate, private val distance: Int? = null) :
     Movement {
     override fun verify(coordinates: Pair<Coordinate, Coordinate>, game: Game): Boolean {
+        println("piece $pieceType coordinate $coordinate ")
         val increase = increase(coordinates, game) ?: return false
         val multiple = multiple(coordinates, game)
+        println(multiple)
         return if (!multiple) {
             false
-        } else if (roadBlocked(coordinates, game)) {
+        } else if (Util.roadBlocked(coordinate, coordinates, game)) {
             false
         } else {
             distance == null || increase in 1..distance
@@ -44,24 +46,6 @@ class StandardMovement(private val pieceType: String, val coordinate: Coordinate
         val dy = to.y - from.y
         val increase = increase(coordinates, game)!!
         return coordinate.x * increase == dx && coordinate.y * increase == dy
-    }
-
-    private fun roadBlocked(coordinates: Pair<Coordinate, Coordinate>, game: Game): Boolean {
-        val from = coordinates.first
-        val to = coordinates.second
-        val steps = if (coordinate.x != 0) {
-            abs((to.x - from.x) / coordinate.x)
-        } else {
-            abs((to.y - from.y) / coordinate.y)
-        }
-        for (i in 1..steps) {
-            val piece = game.board `get piece` P(from.x + i * coordinate.x, from.y + i * coordinate.y)
-            val isPlayersPiece = to.x == from.x + i * coordinate.x && piece?.color == game.`current player`
-            if (isPlayersPiece || piece != null) {
-                return true
-            }
-        }
-        return false
     }
 
     override fun execute(coordinates: Pair<Coordinate, Coordinate>, game: Game): Board {

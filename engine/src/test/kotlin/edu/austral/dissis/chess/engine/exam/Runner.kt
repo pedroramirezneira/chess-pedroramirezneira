@@ -73,6 +73,9 @@ class Runner(
             val config = File(absolutePath.toUri()).readText()
             return chess `change rules` {
                 add `from json` config
+                add movement Castling()
+                add validation Check()
+                add `win condition` CheckMate()
             }
         }
     }
@@ -82,5 +85,9 @@ fun createChess(): Chess {
     val path = "src/main/kotlin/edu/austral/dissis/chess/engine/config/config.json"
     val absolutePath = Path("").toAbsolutePath().resolve(path)
     val config = File(absolutePath.toUri()).readText()
-    return Chess `from json` config
+    return Chess `from json` config `change rules` {
+        add movement Castling()
+        add validation Check()
+        add `win condition` CheckMate()
+    }
 }
