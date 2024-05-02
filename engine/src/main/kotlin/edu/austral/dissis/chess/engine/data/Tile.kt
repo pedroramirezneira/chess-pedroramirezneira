@@ -1,4 +1,4 @@
-package edu.austral.dissis.chess.engine.models
+package edu.austral.dissis.chess.engine.data
 
 import edu.austral.dissis.chess.engine.interfaces.Coordinate
 

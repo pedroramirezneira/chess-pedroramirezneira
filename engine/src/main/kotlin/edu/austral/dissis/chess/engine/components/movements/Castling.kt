@@ -1,6 +1,6 @@
 package edu.austral.dissis.chess.engine.components.movements
 
-import edu.austral.dissis.chess.engine.models.P
+import edu.austral.dissis.chess.engine.data.P
 import edu.austral.dissis.chess.engine.interfaces.Board
 import edu.austral.dissis.chess.engine.interfaces.Coordinate
 import edu.austral.dissis.chess.engine.interfaces.Game

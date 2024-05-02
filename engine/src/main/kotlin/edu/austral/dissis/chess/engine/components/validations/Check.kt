@@ -10,7 +10,7 @@ class Check : Validation {
         val opposingPieces = game.board.`get pieces`().filter { tile ->
             tile.piece.color != game.`current player`
         }
-        return !opposingPieces.all { tile ->
+        return opposingPieces.all { tile ->
             val state = game `move from` { tile.coordinate to king.coordinate }
             state == game
         }

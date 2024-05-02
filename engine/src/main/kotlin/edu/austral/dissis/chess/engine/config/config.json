@@ -1,0 +1,104 @@
+{
+  "board": {
+    "height": 8,
+    "width": 8,
+    "white_color": "white",
+    "black_color": "black",
+    "mirror": true,
+    "white_arrangement": [
+      [
+        "rook",
+        "knight",
+        "bishop",
+        "queen",
+        "king",
+        "bishop",
+        "knight",
+        "rook"
+      ],
+      [
+        "pawn",
+        "pawn",
+        "pawn",
+        "pawn",
+        "pawn",
+        "pawn",
+        "pawn",
+        "pawn"
+      ]
+    ]
+  },
+  "pieces": [
+    {
+      "type": "king",
+      "movement_distance": 1,
+      "movement_vectors": [
+        "1, 0",
+        "-1, 0",
+        "0, 1",
+        "0, -1",
+        "1, 1",
+        "1, -1",
+        "-1, 1",
+        "-1, -1"
+      ]
+    },
+    {
+      "type": "queen",
+      "movement_vectors": [
+        "1, 0",
+        "-1, 0",
+        "0, 1",
+        "0, -1",
+        "1, 1",
+        "1, -1",
+        "-1, 1",
+        "-1, -1"
+      ]
+    },
+    {
+      "type": "rook",
+      "movement_vectors": [
+        "1, 0",
+        "-1, 0",
+        "0, 1",
+        "0, -1"
+      ]
+    },
+    {
+      "type": "bishop",
+      "movement_vectors": [
+        "1, 1",
+        "1, -1",
+        "-1, 1",
+        "-1, -1"
+      ]
+    },
+    {
+      "type": "knight",
+      "movement_distance": 1,
+      "movement_vectors": [
+        "2, 1",
+        "2, -1",
+        "-2, 1",
+        "-2, -1",
+        "1, 2",
+        "1, -2",
+        "-1, 2",
+        "-1, -2"
+      ]
+    },
+    {
+      "type": "pawn",
+      "initial_distance": 2,
+      "movement_distance": 1,
+      "movement_vectors": [
+        "0, 1"
+      ],
+      "attack_vectors": [
+        "1, 1",
+        "-1, 1"
+      ]
+    }
+  ]
+}
