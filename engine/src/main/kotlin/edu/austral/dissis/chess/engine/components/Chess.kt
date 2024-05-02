@@ -23,21 +23,27 @@ open class Chess(
     }
 
     override infix fun `move from`(block: () -> Pair<Coordinate, Coordinate>): Chess {
-        println(board.toString())
         if (block().first == block().second) return this
         val piece = (board `get piece` block().first) ?: return this
         val isPlayersPiece = piece.color == `current player`
         if (!isPlayersPiece) {
             return this
         }
-        val verifiedMovement = rules.movements.find { movement ->
+        val movements = rules.movements.map { movement ->
+            if (`current player`) {
+                movement
+            } else {
+                movement.inverse()
+            }
+        }
+        val verifiedMovement = movements.find { movement ->
             movement.verify(block(), this)
         }
         if (verifiedMovement == null) {
             return this
         }
-        val board = verifiedMovement.execute(block(), this)
-        val possibleGame = Chess(board, rules, `current player`, states + this)
+        val newBoard = verifiedMovement.execute(block(), this)
+        val possibleGame = Chess(newBoard, rules, `current player`, states + this)
         val isValid = possibleGame.rules.validations.all { validation ->
             validation verify possibleGame
         }
@@ -50,7 +56,7 @@ open class Chess(
         if (verifiedWinCondition != null) {
             return ChessEnded(possibleGame)
         }
-        return Chess(board, rules, !`current player`, states + this)
+        return Chess(newBoard, rules, !`current player`, states + this)
     }
 
     companion object {

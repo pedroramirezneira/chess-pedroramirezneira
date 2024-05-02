@@ -38,4 +38,8 @@ class Castling : Movement {
         val rookToX = if (from.x < to.x) from.x + 1 else from.x - 1
         return state `move piece from` { P(rookFromX, from.y) to P(rookToX, to.y) }
     }
+
+    override fun inverse(): Movement {
+        return this
+    }
 }
