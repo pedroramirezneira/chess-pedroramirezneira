@@ -3,11 +3,11 @@ package edu.austral.dissis.chess.engine.models
 import com.google.gson.annotations.SerializedName
 
 data class ChessData(
-    val options: Options,
+    val board: BoardData,
     val pieces: List<PieceData>,
 )
 
-data class Options(
+data class BoardData(
     val height: Int,
     val width: Int,
     @SerializedName("white_color") val whiteColor: String,

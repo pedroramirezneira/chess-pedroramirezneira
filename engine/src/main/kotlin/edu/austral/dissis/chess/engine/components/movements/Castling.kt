@@ -1,5 +1,6 @@
 package edu.austral.dissis.chess.engine.components.movements
 
+import edu.austral.dissis.chess.engine.components.Util
 import edu.austral.dissis.chess.engine.data.P
 import edu.austral.dissis.chess.engine.interfaces.Board
 import edu.austral.dissis.chess.engine.interfaces.Coordinate
@@ -19,17 +20,10 @@ class Castling : Movement {
         if (!kingSelected || !validMovement) {
             return false
         }
-        val kingHasMoved = pieceHasMoved(from, game)
+        val kingHasMoved = Util.pieceHasMoved(from, game)
         val rookX = if (from.x < to.x) 7 else 0
-        val rookHasMoved = pieceHasMoved(P(rookX, from.y), game)
+        val rookHasMoved = Util.pieceHasMoved(P(rookX, from.y), game)
         return !kingHasMoved && !rookHasMoved
-    }
-
-    private fun pieceHasMoved(coordinate: Coordinate, game: Game): Boolean {
-        val piece = game.board `get piece` coordinate
-        return !game.states.all { state ->
-            state.board `get piece` coordinate == piece
-        }
     }
 
     override fun execute(coordinates: Pair<Coordinate, Coordinate>, game: Game): Board {

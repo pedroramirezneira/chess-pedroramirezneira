@@ -51,9 +51,9 @@ open class Chess(
         infix fun `from json`(json: String): Chess {
             val gson = Gson()
             val data = gson.fromJson(json, ChessData::class.java)
-            val board = ChessBoard from data.options
+            val board = ChessBoard from data.board
             val rules = Rules from data.pieces
-            return Chess(board, rules, data.options.whiteColor)
+            return Chess(board, rules, data.board.whiteColor)
         }
 
         infix fun `from file`(file: String): Chess {
@@ -67,5 +67,6 @@ open class Chess(
 
 fun main() {
     val chess = Chess `from file` "config.json"
-    chess `move from` { P(1, 0) to P(1, 0) }
+    println(chess.board.toString())
+    chess `move from` { P(0, 1) to P(0, 2) }
 }
