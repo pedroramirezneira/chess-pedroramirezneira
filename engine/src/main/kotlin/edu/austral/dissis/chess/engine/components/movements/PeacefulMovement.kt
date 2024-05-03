@@ -8,9 +8,12 @@ import edu.austral.dissis.chess.engine.interfaces.Movement
 
 class PeacefulMovement(private val pieceType: String, val coordinate: Coordinate, private val distance: Int? = null) :
     Movement {
-    override fun verify(coordinates: Pair<Coordinate, Coordinate>, game: Game): Boolean {
+    override fun verify(
+        coordinates: Pair<Coordinate, Coordinate>,
+        game: Game,
+    ): Boolean {
         val to = coordinates.second
-        val piece = game.board `get piece` to
+        val piece = game.board getPiece to
         if (piece != null) {
             return false
         }
@@ -18,7 +21,10 @@ class PeacefulMovement(private val pieceType: String, val coordinate: Coordinate
         return movement.verify(coordinates, game)
     }
 
-    override fun execute(coordinates: Pair<Coordinate, Coordinate>, game: Game): Board {
+    override fun execute(
+        coordinates: Pair<Coordinate, Coordinate>,
+        game: Game,
+    ): Board {
         val movement = StandardMovement(pieceType, coordinate, distance)
         return movement.execute(coordinates, game)
     }

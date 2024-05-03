@@ -8,38 +8,54 @@ import edu.austral.dissis.chess.engine.interfaces.Game
 import edu.austral.dissis.chess.engine.interfaces.Movement
 
 class Castling : Movement {
-    override fun verify(coordinates: Pair<Coordinate, Coordinate>, game: Game): Boolean {
+    override fun verify(
+        coordinates: Pair<Coordinate, Coordinate>,
+        game: Game,
+    ): Boolean {
         val from = coordinates.first
         val to = coordinates.second
-        val whiteKingSelected = from.x == 4 && from.y == 0
-        val blackKingSelected = from.x == 4 && from.y == 7
+        val whiteKingSelected = from.x == FOUR && from.y == ZERO
+        val blackKingSelected = from.x == FOUR && from.y == SEVEN
         val kingSelected = whiteKingSelected || blackKingSelected
         val validVertical = from.y == to.y
-        val validHorizontal = from.x + 2 == to.x || from.x - 2 == to.x
+        val validHorizontal = from.x + TWO == to.x || from.x - TWO == to.x
         val validMovement = validVertical && validHorizontal
         if (!kingSelected || !validMovement) {
             return false
         }
         val kingHasMoved = Util.pieceHasMoved(from, game)
-        val rookFromX = if (from.x < to.x) 7 else 0
-        val rookToX = if (rookFromX == 7) 5 else 3
-        val vector = if (rookToX == 3) P(1, 0) else P(-1, 0)
+        val rookFromX = if (from.x < to.x) SEVEN else ZERO
+        val rookToX = if (rookFromX == SEVEN) FIVE else THREE
+        val vector = if (rookToX == THREE) P(ONE, ZERO) else P(-ONE, ZERO)
         val rookHasMoved = Util.pieceHasMoved(P(rookFromX, from.y), game)
         val roadBlocked = Util.roadBlocked(vector, (P(rookFromX, from.y) to P(rookToX, to.y)), game)
         return !kingHasMoved && !rookHasMoved && !roadBlocked
     }
 
-    override fun execute(coordinates: Pair<Coordinate, Coordinate>, game: Game): Board {
+    override fun execute(
+        coordinates: Pair<Coordinate, Coordinate>,
+        game: Game,
+    ): Board {
         val from = coordinates.first
         val to = coordinates.second
-        val state = game.board `move piece from` { P(from.x, from.y) to P(to.x, to.y) }
-        val rookFromX = if (from.x < to.x) 7 else 0
+        val state = game.board movePieceFrom { P(from.x, from.y) to P(to.x, to.y) }
+        val rookFromX = if (from.x < to.x) SEVEN else ZERO
         println(rookFromX)
-        val rookToX = if (from.x < to.x) from.x + 1 else from.x - 1
-        return state `move piece from` { P(rookFromX, from.y) to P(rookToX, to.y) }
+        val rookToX = if (from.x < to.x) from.x + ONE else from.x - ONE
+        return state movePieceFrom { P(rookFromX, from.y) to P(rookToX, to.y) }
     }
 
     override fun inverse(): Movement {
         return this
+    }
+
+    companion object {
+        private const val ZERO = 0
+        private const val ONE = 1
+        private const val TWO = 2
+        private const val THREE = 3
+        private const val FOUR = 4
+        private const val FIVE = 5
+        private const val SEVEN = 7
     }
 }

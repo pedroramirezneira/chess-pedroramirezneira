@@ -6,8 +6,10 @@ import edu.austral.dissis.chess.engine.data.Rules
 interface Game {
     val board: Board
     val rules: Rules
-    val `current player`: Boolean
+    val currentPlayer: Boolean
     val states: List<Game>
-    infix fun `change rules`(block: RulesBuilder.() -> Unit): Game
-    infix fun `move from`(block: () -> Pair<Coordinate, Coordinate>): Game
+
+    infix fun changeRules(block: RulesBuilder.() -> Unit): Game
+
+    infix fun moveFrom(block: () -> Pair<Coordinate, Coordinate>): Game
 }

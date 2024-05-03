@@ -8,14 +8,20 @@ import edu.austral.dissis.chess.engine.interfaces.Movement
 
 class AttackMovement(private val pieceType: String, val coordinate: Coordinate, private val distance: Int? = null) :
     Movement {
-    override fun verify(coordinates: Pair<Coordinate, Coordinate>, game: Game): Boolean {
+    override fun verify(
+        coordinates: Pair<Coordinate, Coordinate>,
+        game: Game,
+    ): Boolean {
         val to = coordinates.second
-        (game.board `get piece` to) ?: return false
+        (game.board getPiece to) ?: return false
         val movement = StandardMovement(pieceType, coordinate, distance)
         return movement.verify(coordinates, game)
     }
 
-    override fun execute(coordinates: Pair<Coordinate, Coordinate>, game: Game): Board {
+    override fun execute(
+        coordinates: Pair<Coordinate, Coordinate>,
+        game: Game,
+    ): Board {
         val movement = StandardMovement(pieceType, coordinate, distance)
         return movement.execute(coordinates, game)
     }

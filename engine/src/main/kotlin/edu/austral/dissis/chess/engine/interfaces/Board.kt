@@ -6,8 +6,12 @@ import edu.austral.dissis.chess.engine.data.Tile
 
 interface Board {
     val size: Size
-    infix fun `get piece`(coordinate: Coordinate): Piece?
-    fun `get pieces`(): Iterable<Tile>
-    infix fun `get pieces by type`(type: String): Iterable<Tile>
-    infix fun `move piece from`(block: () -> Pair<Coordinate, Coordinate>): Board
+
+    infix fun getPiece(coordinate: Coordinate): Piece?
+
+    fun getPieces(): Iterable<Tile>
+
+    infix fun getPiecesByType(type: String): Iterable<Tile>
+
+    infix fun movePieceFrom(block: () -> Pair<Coordinate, Coordinate>): Board
 }

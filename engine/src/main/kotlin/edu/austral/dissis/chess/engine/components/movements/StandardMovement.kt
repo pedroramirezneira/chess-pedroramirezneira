@@ -10,7 +10,10 @@ import kotlin.math.abs
 
 class StandardMovement(private val pieceType: String, val coordinate: Coordinate, private val distance: Int? = null) :
     Movement {
-    override fun verify(coordinates: Pair<Coordinate, Coordinate>, game: Game): Boolean {
+    override fun verify(
+        coordinates: Pair<Coordinate, Coordinate>,
+        game: Game,
+    ): Boolean {
         val increase = increase(coordinates, game) ?: return false
         val multiple = multiple(coordinates, game)
         return if (!multiple) {
@@ -22,10 +25,13 @@ class StandardMovement(private val pieceType: String, val coordinate: Coordinate
         }
     }
 
-    private fun increase(coordinates: Pair<Coordinate, Coordinate>, game: Game): Int? {
+    private fun increase(
+        coordinates: Pair<Coordinate, Coordinate>,
+        game: Game,
+    ): Int? {
         val from = coordinates.first
         val to = coordinates.second
-        val piece = game.board `get piece` from
+        val piece = game.board getPiece from
         if (piece == null || piece.type != pieceType) {
             return null
         }
@@ -38,7 +44,10 @@ class StandardMovement(private val pieceType: String, val coordinate: Coordinate
         }
     }
 
-    private fun multiple(coordinates: Pair<Coordinate, Coordinate>, game: Game): Boolean {
+    private fun multiple(
+        coordinates: Pair<Coordinate, Coordinate>,
+        game: Game,
+    ): Boolean {
         val from = coordinates.first
         val to = coordinates.second
         val dx = to.x - from.x
@@ -47,8 +56,11 @@ class StandardMovement(private val pieceType: String, val coordinate: Coordinate
         return coordinate.x * increase == dx && coordinate.y * increase == dy
     }
 
-    override fun execute(coordinates: Pair<Coordinate, Coordinate>, game: Game): Board {
-        return game.board `move piece from` { coordinates }
+    override fun execute(
+        coordinates: Pair<Coordinate, Coordinate>,
+        game: Game,
+    ): Board {
+        return game.board movePieceFrom { coordinates }
     }
 
     override fun inverse(): Movement {

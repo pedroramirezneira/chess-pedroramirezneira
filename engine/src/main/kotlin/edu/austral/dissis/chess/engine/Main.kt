@@ -12,18 +12,24 @@ import kotlin.io.path.Path
 const val PATH = "engine/src/main/kotlin/edu/austral/dissis/chess/engine/config/config.json"
 val ABSOLUTE_PATH: Path = Path("").toAbsolutePath().resolve(PATH)
 val CONFIG = File(ABSOLUTE_PATH.toUri()).readText()
+private const val ZERO = 0
+private const val ONE = 1
+private const val THREE = 3
+private const val FOUR = 4
+private const val SIX = 6
 
 fun main() {
-    val chess = Chess `from json` CONFIG `change rules` {
-        add movement Castling()
-        add validation Check()
-        add `win condition` CheckMate()
-    }
+    val chess =
+        Chess fromJson CONFIG changeRules {
+            add movement Castling()
+            add validation Check()
+            add winCondition CheckMate()
+        }
     println(chess.board.toString())
     println()
-    val state = chess `move from` { P(0, 1) to P(0, 3) }
+    val state = chess moveFrom { P(ZERO, ONE) to P(ZERO, THREE) }
     println(state.board.toString())
     println()
-    val state2 = state `move from` { P(0, 6) to P(0, 4) }
+    val state2 = state moveFrom { P(ZERO, SIX) to P(ZERO, FOUR) }
     println(state2.board.toString())
 }
