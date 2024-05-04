@@ -5,7 +5,6 @@ import edu.austral.dissis.chess.engine.data.Rules
 import edu.austral.dissis.chess.engine.interfaces.Board
 import edu.austral.dissis.chess.engine.interfaces.Coordinate
 import edu.austral.dissis.chess.engine.interfaces.Game
-import edu.austral.dissis.chess.engine.interfaces.Movement
 import edu.austral.dissis.chess.engine.models.ChessData
 
 open class Chess(
@@ -30,55 +29,34 @@ open class Chess(
         val from = coordinates.first
         val to = coordinates.second
         val hasMoved = from != to
-        val piece = board getPiece block().first
+        val piece = board getPiece from
         val isPlayersPiece = piece?.color == currentPlayer
         return when {
             !hasMoved -> this
             piece == null -> this
             !isPlayersPiece -> this
-            else -> handleMovement(block())
+            else -> handleMovement(coordinates)
         }
     }
 
     private fun handleMovement(coordinates: Pair<Coordinate, Coordinate>): Chess {
-        val movements = playerMovements()
-        val verifiedMovement = verifiedMovements(movements, coordinates)
+        val movements = Util.playerMovements(this)
+        val verifiedMovement = Util.verifiedMovement(movements, coordinates, this)
         val newBoard = verifiedMovement?.execute(coordinates, this)
         val possibleGame = newBoard?.let { Chess(it, rules, currentPlayer, states + this) }
-        val valid = isValid(possibleGame)
+        val isValid = possibleGame?.let { Util.isValid(it) }
         val winCondition = verifiedWinCondition(possibleGame)
         return when {
             verifiedMovement == null -> this
-            !valid!! -> this
-            winCondition != null -> ChessEnded(possibleGame!!)
-            else -> Chess(newBoard!!, rules, !currentPlayer, states + this)
+            !isValid!! -> this
+            winCondition != null -> ChessEnded(possibleGame)
+            else -> Chess(newBoard, rules, !currentPlayer, states + this)
         }
     }
 
-    private fun verifiedWinCondition(possibleGame: Chess?) =
-        possibleGame?.rules?.winConditions?.find { condition ->
-            condition verify possibleGame
-        }
-
-    private fun isValid(game: Chess?) =
-        game?.rules?.validations?.all { validation ->
-            validation verify game
-        }
-
-    private fun verifiedMovements(
-        movements: List<Movement>,
-        coordinates: Pair<Coordinate, Coordinate>,
-    ) = movements.find { movement ->
-        movement.verify(coordinates, this)
-    }
-
-    private fun playerMovements() =
-        rules.movements.map { movement ->
-            if (currentPlayer) {
-                movement
-            } else {
-                movement.inverse()
-            }
+    private fun verifiedWinCondition(game: Chess?) =
+        game?.rules?.winConditions?.find { condition ->
+            condition verify game
         }
 
     companion object {

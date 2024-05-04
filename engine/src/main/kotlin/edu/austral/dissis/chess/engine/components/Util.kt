@@ -3,6 +3,7 @@ package edu.austral.dissis.chess.engine.components
 import edu.austral.dissis.chess.engine.data.P
 import edu.austral.dissis.chess.engine.interfaces.Coordinate
 import edu.austral.dissis.chess.engine.interfaces.Game
+import edu.austral.dissis.chess.engine.interfaces.Movement
 import kotlin.math.abs
 
 object Util {
@@ -38,4 +39,26 @@ object Util {
         }
         return false
     }
+
+    fun playerMovements(game: Game) =
+        game.rules.movements.map { movement ->
+            if (game.currentPlayer) {
+                movement
+            } else {
+                movement.inverse()
+            }
+        }
+
+    fun verifiedMovement(
+        movements: List<Movement>,
+        coordinates: Pair<Coordinate, Coordinate>,
+        game: Game,
+    ) = movements.find { movement ->
+        movement.verify(coordinates, game)
+    }
+
+    fun isValid(game: Chess) =
+        game.rules.validations.all { validation ->
+            validation verify game
+        }
 }
