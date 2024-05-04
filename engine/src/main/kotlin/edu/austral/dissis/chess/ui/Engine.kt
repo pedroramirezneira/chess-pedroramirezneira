@@ -21,19 +21,17 @@ import edu.austral.dissis.chess.gui.Position
 import java.io.File
 import kotlin.io.path.Path
 
-private const val EIGHT = 8
-private const val SEVEN = 7
-
 class Engine : GameEngine {
     private var game = createChess()
 
     override fun applyMove(move: Move): MoveResult {
         val from = move.from
         val to = move.to
+        val size = game.board.size
         val xFrom = from.column - 1
-        val yFrom = EIGHT - from.row
+        val yFrom = size.height - from.row
         val xTo = to.column - 1
-        val yTo = EIGHT - to.row
+        val yTo = size.height - to.row
         val state = game moveFrom { P(xFrom, yFrom) to P(xTo, yTo) }
         val playerColor = color(state.currentPlayer)
         val pieces = toPieces(state)
@@ -77,7 +75,8 @@ class Engine : GameEngine {
         return game.board.getPieces().map { tile ->
             val color = color(tile.piece.color)
             val coordinate = tile.coordinate
-            val row = SEVEN - coordinate.y + 1
+            val size = game.board.size
+            val row = size.height - coordinate.y
             val column = coordinate.x + 1
             val position = Position(row, column)
             val id = System.identityHashCode(tile.piece).toString()

@@ -71,7 +71,7 @@ class ChessBoard(override val size: Size, private val tiles: List<List<Piece?>>)
                 }
             val blackArrangement =
                 if (boardData.mirror == true) {
-                    whiteArrangement.map { it.reversed() }.reversed()
+                    whiteArrangement.reversed()
                 } else {
                     (0 until boardData.height).map { y ->
                         (0 until boardData.width).map { x ->

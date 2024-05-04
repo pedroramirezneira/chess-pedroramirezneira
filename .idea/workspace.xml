@@ -6,14 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="0ca9d728-dc89-4779-841b-a4a9d3d7f12c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/Chess.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/Chess.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/ChessBoard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/ChessBoard.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/Util.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/Util.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/movements/InitialMovement.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/movements/InitialMovement.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/movements/StandardMovement.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/movements/StandardMovement.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/validations/Check.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/validations/Check.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/winconditions/CheckMate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/winconditions/CheckMate.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/Game.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/Movement.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/Movement.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/Validation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/Validation.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/WinCondition.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/WinCondition.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/ui/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/ui/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/data/Rules.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/data/Rules.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/ui/Engine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/ui/Engine.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/test/kotlin/edu/austral/dissis/chess/engine/exam/Runner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/test/kotlin/edu/austral/dissis/chess/engine/exam/Runner.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +105,7 @@
       <recent name="edu.austral.dissis.chess.engine.components" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.MainKt (1)">
+  <component name="RunManager" selected="Gradle.Exam">
     <configuration name="Exam" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -158,8 +159,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.MainKt (1)" />
         <item itemvalue="Gradle.Exam" />
+        <item itemvalue="Kotlin.MainKt (1)" />
         <item itemvalue="Kotlin.MainKt" />
       </list>
     </recent_temporary>
@@ -198,11 +199,22 @@
       <workItem from="1714757901719" duration="9833000" />
       <workItem from="1714785854854" duration="1905000" />
       <workItem from="1714794378720" duration="2649000" />
-      <workItem from="1714836864323" duration="2737000" />
+      <workItem from="1714836864323" duration="3258000" />
+      <workItem from="1714843763046" duration="13984000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.opentest4j.AssertionFailedError" package="org.opentest4j" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

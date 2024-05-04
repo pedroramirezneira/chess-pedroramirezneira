@@ -25,15 +25,20 @@ object Util {
         val from = coordinates.first
         val to = coordinates.second
         val steps =
-            if (coordinate.x != 0) {
-                abs((to.x - from.x) / coordinate.x)
-            } else {
-                abs((to.y - from.y) / coordinate.y)
+            when {
+                coordinate.x != 0 -> abs((to.x - from.x) / coordinate.x)
+                else -> abs((to.y - from.y) / coordinate.y)
             }
         for (i in 1..steps) {
             val piece = game.board getPiece P(from.x + i * coordinate.x, from.y + i * coordinate.y)
-            val isPlayersPiece = to.x == from.x + i * coordinate.x && piece?.color == game.currentPlayer
-            if (piece != null && isPlayersPiece) {
+            val isPlayersPiece = piece?.color == game.currentPlayer
+            val isBlocked =
+                when {
+                    i == steps -> isPlayersPiece
+                    piece != null -> true
+                    else -> false
+                }
+            if (isBlocked) {
                 return true
             }
         }
@@ -42,10 +47,9 @@ object Util {
 
     fun playerMovements(game: Game) =
         game.rules.movements.map { movement ->
-            if (game.currentPlayer) {
-                movement
-            } else {
-                movement.inverse()
+            when {
+                game.currentPlayer -> movement
+                else -> movement.inverse()
             }
         }
 

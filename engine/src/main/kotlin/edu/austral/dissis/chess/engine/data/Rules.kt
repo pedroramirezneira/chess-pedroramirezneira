@@ -30,10 +30,8 @@ data class Rules(
                     ) +
                         if (piece.initialDistance != null) {
                             piece.movementVectors.map { vector ->
-                                val components = vector.split(", ")
-                                val x = components[0].toInt()
-                                val y = components[1].toInt()
-                                InitialMovement(piece.type, P(x, y), piece.initialDistance)
+                                val movement = movement(piece, vector, piece.initialDistance)
+                                InitialMovement(movement)
                             }
                         } else {
                             emptyList()
@@ -51,14 +49,15 @@ data class Rules(
         private fun movement(
             piece: PieceData,
             vector: String,
+            distance: Int? = null,
         ): Movement {
             val components = vector.split(", ")
             val x = components[0].toInt()
             val y = components[1].toInt()
             return if (piece.attackVectors != null) {
-                PeacefulMovement(piece.type, P(x, y), piece.movementDistance)
+                PeacefulMovement(piece.type, P(x, y), distance ?: piece.movementDistance)
             } else {
-                StandardMovement(piece.type, P(x, y), piece.movementDistance)
+                StandardMovement(piece.type, P(x, y), distance ?: piece.movementDistance)
             }
         }
     }

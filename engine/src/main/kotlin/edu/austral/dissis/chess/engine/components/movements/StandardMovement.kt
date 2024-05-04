@@ -16,12 +16,10 @@ class StandardMovement(private val pieceType: String, val coordinate: Coordinate
     ): Boolean {
         val increase = increase(coordinates, game) ?: return false
         val multiple = multiple(coordinates, game)
-        return if (!multiple) {
-            false
-        } else if (Util.roadBlocked(coordinate, coordinates, game)) {
-            false
-        } else {
-            distance == null || increase in 1..distance
+        return when {
+            !multiple -> false
+            Util.roadBlocked(coordinate, coordinates, game) -> false
+            else -> distance == null || increase in 1..distance
         }
     }
 
@@ -37,10 +35,9 @@ class StandardMovement(private val pieceType: String, val coordinate: Coordinate
         }
         val dx = to.x - from.x
         val dy = to.y - from.y
-        return if (coordinate.x != 0) {
-            abs(dx / coordinate.x)
-        } else {
-            abs(dy / coordinate.y)
+        return when {
+            coordinate.x != 0 -> abs(dx / coordinate.x)
+            else -> abs(dy / coordinate.y)
         }
     }
 
