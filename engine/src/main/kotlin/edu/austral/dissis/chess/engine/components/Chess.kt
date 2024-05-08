@@ -45,7 +45,7 @@ open class Chess(
         val newBoard = verifiedMovement?.execute(coordinates, this)
         val possibleGame = newBoard?.let { Chess(it, rules, currentPlayer, states + this) }
         val isValid = possibleGame?.let { Util.isValid(it) }
-        val winCondition = verifiedWinCondition(possibleGame)
+        val winCondition = possibleGame?.let { verifiedWinCondition(it) }
         return when {
             verifiedMovement == null -> this
             !isValid!! -> this
@@ -54,8 +54,8 @@ open class Chess(
         }
     }
 
-    private fun verifiedWinCondition(game: Chess?) =
-        game?.rules?.winConditions?.find { condition ->
+    private fun verifiedWinCondition(game: Chess) =
+        game.rules.winConditions.find { condition ->
             condition verify game
         }
 

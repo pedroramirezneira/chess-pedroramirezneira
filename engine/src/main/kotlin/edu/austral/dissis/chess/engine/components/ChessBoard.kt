@@ -49,7 +49,7 @@ class ChessBoard(override val size: Size, private val tiles: List<List<Piece?>>)
         val board: List<String> =
             tiles.reversed().map { column ->
                 column.joinToString(", ") { piece ->
-                    piece?.let { "${it.type} ${if (it.color) "white" else "black"}" } ?: "     ◼     "
+                    piece?.let { "${it.type} ${if (it.color) "white" else "black"}" } ?: "null"
                 }
             }
         return board.joinToString("\n")

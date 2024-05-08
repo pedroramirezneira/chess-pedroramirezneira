@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0ca9d728-dc89-4779-841b-a4a9d3d7f12c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/ChessBoard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/ChessBoard.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/Util.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/Util.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/movements/InitialMovement.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/movements/InitialMovement.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/movements/StandardMovement.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/movements/StandardMovement.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/validations/Check.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/validations/Check.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/winconditions/CheckMate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/winconditions/CheckMate.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/data/Rules.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/data/Rules.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/ui/Engine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/ui/Engine.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/test/kotlin/edu/austral/dissis/chess/engine/exam/Runner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/test/kotlin/edu/austral/dissis/chess/engine/exam/Runner.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/Board.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/Board.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/Coordinate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/Coordinate.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +52,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="server" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,6 +61,9 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2fpuDmZrk1oVI6qLsDKBKWJ5F0Y" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -82,7 +78,7 @@
     &quot;Kotlin.MainKt (1).executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;rework&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/pedro/Sandbox/chess-pedroramirezneira&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -201,6 +197,7 @@
       <workItem from="1714794378720" duration="2649000" />
       <workItem from="1714836864323" duration="3258000" />
       <workItem from="1714843763046" duration="13984000" />
+      <workItem from="1715127786211" duration="531000" />
     </task>
     <servers />
   </component>
