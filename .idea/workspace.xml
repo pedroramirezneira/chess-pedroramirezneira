@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ca9d728-dc89-4779-841b-a4a9d3d7f12c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/Board.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/Board.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/Coordinate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/Coordinate.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/ui/Engine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/ui/Engine.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +16,9 @@
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/chess-pedroramirezneira">
       <ProjectState />
     </projectState>
   </component>
@@ -68,40 +71,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build chess-pedroramirezneira.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Exam.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Exam.required exam tests (1).executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.Exam.required exam tests.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.ChessKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt (1).executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/pedro/Sandbox/chess-pedroramirezneira&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build chess-pedroramirezneira.executor": "Run",
+    "Gradle.Exam.executor": "Run",
+    "Gradle.Exam.required exam tests (1).executor": "Debug",
+    "Gradle.Exam.required exam tests.executor": "Run",
+    "Gradle.RulesBuilderTest.executor": "Run",
+    "Gradle.Tests in 'chess.engine.test'.executor": "Debug",
+    "Gradle.UtilTest.executor": "Run",
+    "Gradle.UtilTest.playerMovements.executor": "Run",
+    "Gradle.UtilTest.roadBlocked.executor": "Run",
+    "Kotlin.ChessKt.executor": "Run",
+    "Kotlin.MainKt (1).executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/pedro/Sandbox/chess-pedroramirezneira",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.completion",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;kotlin-gradle-user-dirs&quot;: [
-      &quot;C:\\Users\\pedro\\.gradle&quot;
+  "keyToStringList": {
+    "kotlin-gradle-user-dirs": [
+      "C:\\Users\\pedro\\.gradle"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="edu.austral.dissis.chess.engine.models" />
       <recent name="edu.austral.dissis.chess.engine.components" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Exam">
+  <component name="RunManager" selected="Gradle.Tests in 'chess.engine.test'">
     <configuration name="Exam" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -126,38 +134,32 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MainKt (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="edu.austral.dissis.chess.ui.MainKt" />
-      <module name="chess.engine.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="edu.austral.dissis.chess.engine.MainKt" />
-      <module name="chess.engine.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="chess-pedroramirezneira" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="chess-pedroramirezneira" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="Tests in 'chess.engine.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":engine:test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Tests in 'chess.engine.test'" />
         <item itemvalue="Gradle.Exam" />
-        <item itemvalue="Kotlin.MainKt (1)" />
-        <item itemvalue="Kotlin.MainKt" />
       </list>
     </recent_temporary>
   </component>
@@ -211,7 +213,15 @@
           <properties class="org.opentest4j.AssertionFailedError" package="org.opentest4j" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/engine/src/test/kotlin/edu/austral/dissis/chess/engine/ui/EngineTest.kt</url>
+          <line>29</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/chess$Tests_in__chess_engine_test_.ic" NAME="Tests in 'chess.engine.test' Coverage Results" MODIFIED="1715287252173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>
