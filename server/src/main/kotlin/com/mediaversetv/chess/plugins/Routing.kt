@@ -11,7 +11,12 @@ import io.ktor.server.application.*
 import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
+@OptIn(DelicateCoroutinesApi::class)
 fun Application.configureRouting() {
     install(StatusPages) {
         exception<Throwable> { call, cause ->
@@ -30,13 +35,17 @@ fun Application.configureRouting() {
             }
             val room = Rooms createRoom chess
             println(room.code)
+            GlobalScope.launch {
+                delay(30 * 60 * 1000L)
+                Rooms deleteRoom room
+            }
             call.respondText(room.code, status = HttpStatusCode.Created)
         }
-        get("/game/{id}") {
-            val id =
-                call.parameters["id"] ?: return@get call.respondText("Bad Request", status = HttpStatusCode.BadRequest)
-            println(id)
-            val room = (Rooms getRoom id) ?: return@get call.respondText("Not Found", status = HttpStatusCode.NotFound)
+        get("/game/{code}") {
+            val code =
+                call.parameters["code"]?.uppercase() ?: return@get call.respondText("Bad Request", status = HttpStatusCode.BadRequest)
+            println(code)
+            val room = (Rooms getRoom code) ?: return@get call.respondText("Not Found", status = HttpStatusCode.NotFound)
             call.respondText(room.code, status = HttpStatusCode.OK)
         }
     }

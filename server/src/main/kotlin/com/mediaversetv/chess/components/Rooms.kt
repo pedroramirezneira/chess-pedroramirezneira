@@ -2,6 +2,7 @@ package com.mediaversetv.chess.components
 
 import com.mediaversetv.chess.data.GameRoom
 import edu.austral.dissis.chess.engine.interfaces.Game
+import io.ktor.websocket.*
 
 object Rooms {
     private val rooms = mutableListOf<GameRoom>()
@@ -14,5 +15,12 @@ object Rooms {
 
     infix fun getRoom(code: String): GameRoom? {
         return rooms.find { it.code == code }
+    }
+
+    suspend infix fun deleteRoom(room: GameRoom) {
+        room.listeners.forEach { listener ->
+            listener.close(CloseReason(CloseReason.Codes.NORMAL, "Game has ended."))
+        }
+        rooms.remove(room)
     }
 }

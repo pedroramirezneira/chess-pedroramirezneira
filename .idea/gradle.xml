@@ -40,6 +40,14 @@
         </option>
         <option name="resolveExternalAnnotations" value="false" />
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/chess-pedroramirezneira" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/chess-pedroramirezneira" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
   </component>
 </project>

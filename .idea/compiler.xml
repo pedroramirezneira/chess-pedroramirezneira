@@ -2,18 +2,18 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="21">
-      <module name="chess-pedroramirezneira" target="17" />
-      <module name="chess-pedroramirezneira.main" target="17" />
       <module name="chess-pedroramirezneira.server" target="17" />
       <module name="chess-pedroramirezneira.server.main" target="17" />
       <module name="chess-pedroramirezneira.server.test" target="17" />
-      <module name="chess-pedroramirezneira.test" target="17" />
       <module name="com.mediaversetv.chess.chess" target="17" />
       <module name="com.mediaversetv.chess.chess.main" target="17" />
       <module name="com.mediaversetv.chess.chess.test" target="17" />
       <module name="server" target="17" />
       <module name="server.main" target="17" />
       <module name="server.test" target="17" />
+      <module name="si" target="11" />
+      <module name="si.main" target="11" />
+      <module name="si.test" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
