@@ -17,9 +17,9 @@ open class Chess(
         val builder = RulesBuilder()
         builder.block()
         val newRules = builder.build()
-        val newMovements = rules.movements + newRules.movements
-        val newValidations = rules.validations + newRules.validations
-        val newWinConditions = rules.winConditions + newRules.winConditions
+        val newMovements = newRules.movements + rules.movements
+        val newValidations = newRules.validations + rules.validations
+        val newWinConditions = newRules.winConditions + rules.winConditions
         val updatedRules = Rules(newMovements, newValidations, newWinConditions)
         return Chess(board, updatedRules, currentPlayer, states)
     }

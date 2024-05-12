@@ -3,6 +3,8 @@ package edu.austral.dissis.chess.ui
 import edu.austral.dissis.chess.engine.components.Chess
 import edu.austral.dissis.chess.engine.components.ChessEnded
 import edu.austral.dissis.chess.engine.components.movements.Castling
+import edu.austral.dissis.chess.engine.components.movements.EnPassant
+import edu.austral.dissis.chess.engine.components.movements.Promotion
 import edu.austral.dissis.chess.engine.components.validations.Check
 import edu.austral.dissis.chess.engine.components.winconditions.CheckMate
 import edu.austral.dissis.chess.engine.data.P
@@ -58,6 +60,8 @@ class Engine(private val path: String? = null) : GameEngine {
         val config = File(absolutePath.toUri()).readText()
         return Chess fromJson config changeRules {
             add movement Castling()
+            add movement Promotion()
+            add movement EnPassant()
             add validation Check()
             add winCondition CheckMate()
         }

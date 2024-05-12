@@ -9,6 +9,23 @@ import edu.austral.dissis.chess.engine.interfaces.Coordinate
 import edu.austral.dissis.chess.engine.models.BoardData
 
 class ChessBoard(override val size: Size, private val tiles: List<List<Piece?>>) : Board {
+    override fun addPiece(
+        piece: Piece,
+        coordinate: Coordinate,
+    ): Board {
+        val newTiles: List<List<Piece?>> =
+            tiles.mapIndexed { y, column ->
+                column.mapIndexed { x, oldPiece ->
+                    val destination = coordinate.x == x && coordinate.y == y
+                    when {
+                        destination -> piece
+                        else -> oldPiece
+                    }
+                }
+            }
+        return ChessBoard(size, newTiles)
+    }
+
     override infix fun getPiece(coordinate: Coordinate): Piece? {
         return tiles[coordinate.y][coordinate.x]
     }

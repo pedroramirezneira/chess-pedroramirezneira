@@ -45,7 +45,7 @@ object Util {
         return false
     }
 
-    fun playerMovements(game: Game) =
+    infix fun playerMovements(game: Game) =
         game.rules.movements.map { movement ->
             when {
                 game.currentPlayer -> movement
@@ -61,7 +61,7 @@ object Util {
         movement.verify(coordinates, game)
     }
 
-    fun isValid(game: Chess) =
+    infix fun isValid(game: Chess) =
         game.rules.validations.all { validation ->
             validation verify game
         }

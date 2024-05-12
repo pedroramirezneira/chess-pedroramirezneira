@@ -3,6 +3,7 @@ package edu.austral.dissis.chess.engine.ui
 import edu.austral.dissis.chess.engine.TEST_PATH
 import edu.austral.dissis.chess.gui.InvalidMove
 import edu.austral.dissis.chess.gui.Move
+import edu.austral.dissis.chess.gui.PlayerColor
 import edu.austral.dissis.chess.gui.Position
 import edu.austral.dissis.chess.ui.Engine
 import org.junit.jupiter.api.Test
@@ -27,5 +28,12 @@ class EngineTest {
         val move = Move(from, to)
         val result = engine.applyMove(move)
         assert(result is InvalidMove)
+    }
+
+    @Test
+    fun init() {
+        val engine = Engine(TEST_PATH)
+        val state = engine.init()
+        assert(state.currentPlayer == PlayerColor.WHITE)
     }
 }

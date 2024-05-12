@@ -13,6 +13,15 @@ interface Board {
     val size: Size
 
     /**
+     * Adds a Piece to the given Coordinate.
+     * @return a new updated Board.
+     */
+    fun addPiece(
+        piece: Piece,
+        coordinate: Coordinate,
+    ): Board
+
+    /**
      * @return The Piece at the given Coordinate.
      */
     infix fun getPiece(coordinate: Coordinate): Piece?

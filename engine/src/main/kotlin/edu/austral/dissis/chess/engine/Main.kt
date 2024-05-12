@@ -2,6 +2,8 @@ package edu.austral.dissis.chess.engine
 
 import edu.austral.dissis.chess.engine.components.Chess
 import edu.austral.dissis.chess.engine.components.movements.Castling
+import edu.austral.dissis.chess.engine.components.movements.EnPassant
+import edu.austral.dissis.chess.engine.components.movements.Promotion
 import edu.austral.dissis.chess.engine.components.validations.Check
 import edu.austral.dissis.chess.engine.components.winconditions.CheckMate
 import edu.austral.dissis.chess.engine.data.P
@@ -22,6 +24,8 @@ fun main() {
     val chess =
         Chess fromJson CONFIG changeRules {
             add movement Castling()
+            add movement Promotion()
+            add movement EnPassant()
             add validation Check()
             add winCondition CheckMate()
         }

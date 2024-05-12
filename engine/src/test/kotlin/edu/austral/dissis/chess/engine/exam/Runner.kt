@@ -4,6 +4,7 @@ import edu.austral.dissis.chess.engine.components.Chess
 import edu.austral.dissis.chess.engine.components.ChessBoard
 import edu.austral.dissis.chess.engine.components.ChessEnded
 import edu.austral.dissis.chess.engine.components.movements.Castling
+import edu.austral.dissis.chess.engine.components.movements.Promotion
 import edu.austral.dissis.chess.engine.components.validations.Check
 import edu.austral.dissis.chess.engine.components.winconditions.CheckMate
 import edu.austral.dissis.chess.engine.data.P
@@ -82,10 +83,11 @@ class Runner(
             val absolutePath = Path("").toAbsolutePath().resolve(path)
             val config = File(absolutePath.toUri()).readText()
             return chess changeRules {
-                add fromJson config
                 add movement Castling()
+                add movement Promotion()
                 add validation Check()
                 add winCondition CheckMate()
+                add fromJson config
             }
         }
     }
@@ -97,6 +99,7 @@ fun createChess(): Chess {
     val config = File(absolutePath.toUri()).readText()
     return Chess fromJson config changeRules {
         add movement Castling()
+        add movement Promotion()
         add validation Check()
         add winCondition CheckMate()
     }

@@ -5,9 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ca9d728-dc89-4779-841b-a4a9d3d7f12c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chess-pedroramirezneira/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chess-pedroramirezneira/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chess-pedroramirezneira/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chess-pedroramirezneira/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chess-pedroramirezneira/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chess-pedroramirezneira/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chess-pedroramirezneira/src/main/kotlin/com/example/Application.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chess-pedroramirezneira/src/main/kotlin/com/example/plugins/Routing.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chess-pedroramirezneira/src/main/resources/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/Chess.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/Chess.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/ChessBoard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/ChessBoard.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/Util.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/Util.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/movements/Castling.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/movements/Castling.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/Board.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/interfaces/Board.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/ui/Engine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/ui/Engine.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/test/kotlin/edu/austral/dissis/chess/engine/exam/Runner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/test/kotlin/edu/austral/dissis/chess/engine/exam/Runner.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/test/kotlin/edu/austral/dissis/chess/engine/ui/EngineTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/test/kotlin/edu/austral/dissis/chess/engine/ui/EngineTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +51,11 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="chess" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="chess" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -78,7 +100,7 @@
     "Gradle.Exam.required exam tests (1).executor": "Debug",
     "Gradle.Exam.required exam tests.executor": "Run",
     "Gradle.RulesBuilderTest.executor": "Run",
-    "Gradle.Tests in 'chess.engine.test'.executor": "Debug",
+    "Gradle.Tests in 'chess.engine.test'.executor": "Run",
     "Gradle.UtilTest.executor": "Run",
     "Gradle.UtilTest.playerMovements.executor": "Run",
     "Gradle.UtilTest.roadBlocked.executor": "Run",
@@ -156,9 +178,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.austral.dissis.chess.ui.MainKt" />
+      <module name="chess.engine.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="chess" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="chess" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Tests in 'chess.engine.test'" />
+        <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="Gradle.Exam" />
       </list>
     </recent_temporary>
@@ -200,6 +243,7 @@
       <workItem from="1714836864323" duration="3258000" />
       <workItem from="1714843763046" duration="13984000" />
       <workItem from="1715127786211" duration="531000" />
+      <workItem from="1715529339995" duration="1865000" />
     </task>
     <servers />
   </component>
@@ -213,15 +257,11 @@
           <properties class="org.opentest4j.AssertionFailedError" package="org.opentest4j" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/engine/src/test/kotlin/edu/austral/dissis/chess/engine/ui/EngineTest.kt</url>
-          <line>29</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/chess_pedroramirezneira$Tests_in__chess_engine_test_.ic" NAME="Tests in 'chess.engine.test' Coverage Results" MODIFIED="1715551661813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/chess$Tests_in__chess_engine_test_.ic" NAME="Tests in 'chess.engine.test' Coverage Results" MODIFIED="1715287252173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

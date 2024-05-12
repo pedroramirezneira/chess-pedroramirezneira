@@ -40,7 +40,6 @@ class Castling : Movement {
         val to = coordinates.second
         val state = game.board movePieceFrom { P(from.x, from.y) to P(to.x, to.y) }
         val rookFromX = if (from.x < to.x) SEVEN else ZERO
-        println(rookFromX)
         val rookToX = if (from.x < to.x) from.x + ONE else from.x - ONE
         return state movePieceFrom { P(rookFromX, from.y) to P(rookToX, to.y) }
     }
