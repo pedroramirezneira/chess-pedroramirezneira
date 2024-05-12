@@ -1,9 +1,10 @@
 package com.mediaversetv.chess.plugins
 
 import com.mediaversetv.chess.components.Rooms
-import edu.austral.dissis.chess.engine.CONFIG
 import edu.austral.dissis.chess.engine.components.Chess
 import edu.austral.dissis.chess.engine.components.movements.Castling
+import edu.austral.dissis.chess.engine.components.movements.EnPassant
+import edu.austral.dissis.chess.engine.components.movements.Promotion
 import edu.austral.dissis.chess.engine.components.validations.Check
 import edu.austral.dissis.chess.engine.components.winconditions.CheckMate
 import io.ktor.http.*
@@ -28,8 +29,12 @@ fun Application.configureRouting() {
             call.respondText("Hello World!")
         }
         post("/game") {
-            val chess = Chess fromJson CONFIG changeRules {
+            val resource = Application::class.java.getResourceAsStream("/config/config.json")!!
+            val config = resource.readAllBytes().toString(Charsets.UTF_8)
+            val chess = Chess fromJson config changeRules {
                 add movement Castling()
+                add movement Promotion()
+                add movement EnPassant()
                 add validation Check()
                 add winCondition CheckMate()
             }

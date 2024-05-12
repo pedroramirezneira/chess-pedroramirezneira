@@ -6,6 +6,4 @@ build
 
 gradle.properties
 
-server
-
-local.properties
+server/src/main/resources

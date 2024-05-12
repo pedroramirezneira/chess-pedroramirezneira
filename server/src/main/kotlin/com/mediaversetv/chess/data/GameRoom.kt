@@ -19,7 +19,8 @@ data class GameRoom(
         listeners.forEach { listener ->
             when {
                 game is ChessEnded -> {
-                    val endData = data.plus("ended" to true)
+                    val winner = if (game.currentPlayer) "white" else "black"
+                    val endData = data.plus("ended" to true).plus("winner" to winner)
                     val endJson = gson.toJson(endData)
                     listener.outgoing.send(Frame.Text(endJson))
                 }
