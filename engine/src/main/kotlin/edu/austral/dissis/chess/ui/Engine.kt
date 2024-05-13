@@ -20,11 +20,9 @@ import edu.austral.dissis.chess.gui.MoveResult
 import edu.austral.dissis.chess.gui.NewGameState
 import edu.austral.dissis.chess.gui.PlayerColor
 import edu.austral.dissis.chess.gui.Position
-import java.io.File
-import kotlin.io.path.Path
 
-class Engine(private val path: String? = null) : GameEngine {
-    private var game = path?.let { createChess(it) } ?: createChess()
+class Engine : GameEngine {
+    private var game = createChess()
 
     override fun applyMove(move: Move): MoveResult {
         val from = move.from
@@ -55,9 +53,9 @@ class Engine(private val path: String? = null) : GameEngine {
         return InitialState(boardSize, pieces, currentPlayer)
     }
 
-    private fun createChess(path: String = "engine/src/main/kotlin/edu/austral/dissis/chess/engine/config/config.json"): Chess {
-        val absolutePath = Path("").toAbsolutePath().resolve(path)
-        val config = File(absolutePath.toUri()).readText()
+    private fun createChess(): Chess {
+        val resource = object {}.javaClass.getResourceAsStream("/config/config.json")
+        val config = resource!!.readAllBytes()!!.toString(Charsets.UTF_8)
         return Chess fromJson config changeRules {
             add movement Castling()
             add movement Promotion()

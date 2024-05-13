@@ -7,13 +7,7 @@ import edu.austral.dissis.chess.engine.components.movements.Promotion
 import edu.austral.dissis.chess.engine.components.validations.Check
 import edu.austral.dissis.chess.engine.components.winconditions.CheckMate
 import edu.austral.dissis.chess.engine.data.P
-import java.io.File
-import java.nio.file.Path
-import kotlin.io.path.Path
 
-const val PATH = "engine/src/main/kotlin/edu/austral/dissis/chess/engine/config/config.json"
-val ABSOLUTE_PATH: Path = Path("").toAbsolutePath().resolve(PATH)
-val CONFIG = File(ABSOLUTE_PATH.toUri()).readText()
 private const val ZERO = 0
 private const val ONE = 1
 private const val THREE = 3
@@ -21,8 +15,10 @@ private const val FOUR = 4
 private const val SIX = 6
 
 fun main() {
+    val resource = Chess::class.java.getResourceAsStream("/config/config.json")
+    val config = resource!!.readAllBytes()!!.toString(Charsets.UTF_8)
     val chess =
-        Chess fromJson CONFIG changeRules {
+        Chess fromJson config changeRules {
             add movement Castling()
             add movement Promotion()
             add movement EnPassant()

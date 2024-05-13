@@ -18,8 +18,8 @@ class Promotion : Movement {
         if (piece?.type != "pawn") return false
         val validVertical =
             when (piece.color) {
-                true -> to.y - 1 == from.x && to.y == game.board.size.height - 1
-                false -> to.y + 1 == from.x && to.y == 0
+                true -> to.y - 1 == from.y && to.y == game.board.size.height - 1
+                false -> to.y + 1 == from.y && to.y == 0
             }
         val peacefulHorizontal = to.x == from.x
         val attackHorizontal = abs(from.x - to.x) == 1

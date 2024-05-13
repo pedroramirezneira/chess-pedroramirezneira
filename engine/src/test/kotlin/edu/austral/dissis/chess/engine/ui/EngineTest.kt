@@ -1,6 +1,5 @@
 package edu.austral.dissis.chess.engine.ui
 
-import edu.austral.dissis.chess.engine.TEST_PATH
 import edu.austral.dissis.chess.gui.InvalidMove
 import edu.austral.dissis.chess.gui.Move
 import edu.austral.dissis.chess.gui.PlayerColor
@@ -12,7 +11,7 @@ class EngineTest {
     @Test
     fun constructor() {
         kotlin.runCatching {
-            Engine(TEST_PATH)
+            Engine()
         }.onFailure {
             assert(false)
         }.onFailure {
@@ -22,7 +21,7 @@ class EngineTest {
 
     @Test
     fun applyMove() {
-        val engine = Engine(TEST_PATH)
+        val engine = Engine()
         val from = Position(1, 2)
         val to = Position(3, 3)
         val move = Move(from, to)
@@ -32,7 +31,7 @@ class EngineTest {
 
     @Test
     fun init() {
-        val engine = Engine(TEST_PATH)
+        val engine = Engine()
         val state = engine.init()
         assert(state.currentPlayer == PlayerColor.WHITE)
     }

@@ -22,8 +22,6 @@ import edu.austral.dissis.chess.test.game.TestMoveFailure
 import edu.austral.dissis.chess.test.game.TestMoveResult
 import edu.austral.dissis.chess.test.game.TestMoveSuccess
 import edu.austral.dissis.chess.test.game.WhiteCheckMate
-import java.io.File
-import kotlin.io.path.Path
 
 class Runner(
     private val game: Game = createChess(),
@@ -79,9 +77,8 @@ class Runner(
                 }
             val chessBoard = ChessBoard(size, tiles)
             val chess = Chess(chessBoard, Rules.empty(), true)
-            val path = "src/main/kotlin/edu/austral/dissis/chess/engine/config/config.json"
-            val absolutePath = Path("").toAbsolutePath().resolve(path)
-            val config = File(absolutePath.toUri()).readText()
+            val resource = Chess::class.java.getResourceAsStream("/config/config.json")!!
+            val config = resource.readAllBytes().toString(Charsets.UTF_8)
             return chess changeRules {
                 add movement Castling()
                 add movement Promotion()
@@ -94,9 +91,8 @@ class Runner(
 }
 
 fun createChess(): Chess {
-    val path = "src/main/kotlin/edu/austral/dissis/chess/engine/config/config.json"
-    val absolutePath = Path("").toAbsolutePath().resolve(path)
-    val config = File(absolutePath.toUri()).readText()
+    val resource = Chess::class.java.getResourceAsStream("/config/config.json")!!
+    val config = resource.readAllBytes().toString(Charsets.UTF_8)
     return Chess fromJson config changeRules {
         add movement Castling()
         add movement Promotion()
