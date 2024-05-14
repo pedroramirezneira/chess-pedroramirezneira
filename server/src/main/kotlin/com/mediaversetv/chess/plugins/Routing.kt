@@ -41,7 +41,7 @@ fun Application.configureRouting() {
             val room = Rooms createRoom chess
             println(room.code)
             GlobalScope.launch {
-                delay(30 * 60 * 1000L)
+                delay(60 * 60 * 1000L)
                 Rooms deleteRoom room
             }
             call.respondText(room.code, status = HttpStatusCode.Created)
