@@ -12,7 +12,7 @@ interface Movement {
      */
     fun verify(
         coordinates: Pair<Coordinate, Coordinate>,
-        game: Game,
+        game: IGame,
     ): Boolean
 
     /**
@@ -21,8 +21,8 @@ interface Movement {
      */
     fun execute(
         coordinates: Pair<Coordinate, Coordinate>,
-        game: Game,
-    ): Board
+        game: IGame,
+    ): IBoard
 
     fun inverse(): Movement
 }

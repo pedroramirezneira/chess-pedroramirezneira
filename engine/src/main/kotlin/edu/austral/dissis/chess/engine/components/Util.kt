@@ -2,14 +2,14 @@ package edu.austral.dissis.chess.engine.components
 
 import edu.austral.dissis.chess.engine.data.P
 import edu.austral.dissis.chess.engine.interfaces.Coordinate
-import edu.austral.dissis.chess.engine.interfaces.Game
+import edu.austral.dissis.chess.engine.interfaces.IGame
 import edu.austral.dissis.chess.engine.interfaces.Movement
 import kotlin.math.abs
 
 object Util {
     fun pieceHasMoved(
         coordinate: Coordinate,
-        game: Game,
+        game: IGame,
     ): Boolean {
         val piece = game.board getPiece coordinate
         return !game.states.all { state ->
@@ -20,7 +20,7 @@ object Util {
     fun roadBlocked(
         coordinate: Coordinate,
         coordinates: Pair<Coordinate, Coordinate>,
-        game: Game,
+        game: IGame,
     ): Boolean {
         val from = coordinates.first
         val to = coordinates.second
@@ -45,7 +45,7 @@ object Util {
         return false
     }
 
-    infix fun playerMovements(game: Game) =
+    infix fun playerMovements(game: IGame) =
         game.rules.movements.map { movement ->
             when {
                 game.currentPlayer -> movement
@@ -56,12 +56,12 @@ object Util {
     fun verifiedMovement(
         movements: List<Movement>,
         coordinates: Pair<Coordinate, Coordinate>,
-        game: Game,
+        game: IGame,
     ) = movements.find { movement ->
         movement.verify(coordinates, game)
     }
 
-    infix fun isValid(game: Chess) =
+    infix fun isValid(game: Game) =
         game.rules.validations.all { validation ->
             validation verify game
         }

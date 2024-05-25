@@ -10,5 +10,5 @@ interface Validation {
      * Verifies the Game's state after making a Movement.
      * @return whether this Validation is successful.
      */
-    infix fun verify(game: Game): Boolean
+    infix fun verify(game: IGame): Boolean
 }

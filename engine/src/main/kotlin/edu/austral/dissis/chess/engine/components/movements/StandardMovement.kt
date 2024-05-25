@@ -2,9 +2,9 @@ package edu.austral.dissis.chess.engine.components.movements
 
 import edu.austral.dissis.chess.engine.components.Util
 import edu.austral.dissis.chess.engine.data.P
-import edu.austral.dissis.chess.engine.interfaces.Board
 import edu.austral.dissis.chess.engine.interfaces.Coordinate
-import edu.austral.dissis.chess.engine.interfaces.Game
+import edu.austral.dissis.chess.engine.interfaces.IBoard
+import edu.austral.dissis.chess.engine.interfaces.IGame
 import edu.austral.dissis.chess.engine.interfaces.Movement
 import kotlin.math.abs
 
@@ -12,7 +12,7 @@ class StandardMovement(private val pieceType: String, val coordinate: Coordinate
     Movement {
     override fun verify(
         coordinates: Pair<Coordinate, Coordinate>,
-        game: Game,
+        game: IGame,
     ): Boolean {
         val increase = increase(coordinates, game) ?: return false
         val multiple = multiple(coordinates, game)
@@ -25,7 +25,7 @@ class StandardMovement(private val pieceType: String, val coordinate: Coordinate
 
     private fun increase(
         coordinates: Pair<Coordinate, Coordinate>,
-        game: Game,
+        game: IGame,
     ): Int? {
         val from = coordinates.first
         val to = coordinates.second
@@ -43,7 +43,7 @@ class StandardMovement(private val pieceType: String, val coordinate: Coordinate
 
     private fun multiple(
         coordinates: Pair<Coordinate, Coordinate>,
-        game: Game,
+        game: IGame,
     ): Boolean {
         val from = coordinates.first
         val to = coordinates.second
@@ -55,8 +55,8 @@ class StandardMovement(private val pieceType: String, val coordinate: Coordinate
 
     override fun execute(
         coordinates: Pair<Coordinate, Coordinate>,
-        game: Game,
-    ): Board {
+        game: IGame,
+    ): IBoard {
         return game.board movePieceFrom { coordinates }
     }
 

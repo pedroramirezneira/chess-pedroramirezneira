@@ -10,5 +10,5 @@ interface WinCondition {
      * Verifies the Game's end condition.
      * @return whether this Win Condition is satisfied.
      */
-    infix fun verify(game: Game): Boolean
+    infix fun verify(game: IGame): Boolean
 }

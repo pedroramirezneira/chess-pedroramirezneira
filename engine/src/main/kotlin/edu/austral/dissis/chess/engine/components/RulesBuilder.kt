@@ -24,7 +24,7 @@ class RulesBuilder {
     }
 
     infix fun fromJson(json: String) {
-        val game = Chess fromJson json
+        val game = Game fromJson json
         movements.addAll(game.rules.movements)
         validations.addAll(game.rules.validations)
         winConditions.addAll(game.rules.winConditions)

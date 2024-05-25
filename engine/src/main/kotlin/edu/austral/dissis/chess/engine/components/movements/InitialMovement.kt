@@ -1,16 +1,16 @@
 package edu.austral.dissis.chess.engine.components.movements
 
 import edu.austral.dissis.chess.engine.components.Util
-import edu.austral.dissis.chess.engine.interfaces.Board
 import edu.austral.dissis.chess.engine.interfaces.Coordinate
-import edu.austral.dissis.chess.engine.interfaces.Game
+import edu.austral.dissis.chess.engine.interfaces.IBoard
+import edu.austral.dissis.chess.engine.interfaces.IGame
 import edu.austral.dissis.chess.engine.interfaces.Movement
 
 class InitialMovement(private val movement: Movement) :
     Movement {
     override fun verify(
         coordinates: Pair<Coordinate, Coordinate>,
-        game: Game,
+        game: IGame,
     ): Boolean {
         if (Util.pieceHasMoved(coordinates.first, game)) {
             return false
@@ -20,8 +20,8 @@ class InitialMovement(private val movement: Movement) :
 
     override fun execute(
         coordinates: Pair<Coordinate, Coordinate>,
-        game: Game,
-    ): Board {
+        game: IGame,
+    ): IBoard {
         return movement.execute(coordinates, game)
     }
 
