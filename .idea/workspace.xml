@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0ca9d728-dc89-4779-841b-a4a9d3d7f12c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkers/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkers/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/Board.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/Board.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/movements/Jump.kt" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/movements/Jump.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkers/src/main/kotlin/ui/Engine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/src/main/kotlin/ui/Engine.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/Game.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/RulesBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/RulesBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/data/Rules.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/data/Rules.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +166,7 @@
       <workItem from="1714843763046" duration="13984000" />
       <workItem from="1715127786211" duration="531000" />
       <workItem from="1715529339995" duration="1865000" />
-      <workItem from="1716670198412" duration="11571000" />
+      <workItem from="1716670198412" duration="12833000" />
     </task>
     <servers />
   </component>

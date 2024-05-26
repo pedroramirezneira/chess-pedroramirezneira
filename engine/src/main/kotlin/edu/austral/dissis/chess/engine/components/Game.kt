@@ -20,7 +20,8 @@ open class Game(
         val newMovements = newRules.movements + rules.movements
         val newValidations = newRules.validations + rules.validations
         val newWinConditions = newRules.winConditions + rules.winConditions
-        val updatedRules = Rules(newMovements, newValidations, newWinConditions)
+        val newKeepTurnConditions = newRules.keepTurnConditions + rules.keepTurnConditions
+        val updatedRules = Rules(newMovements, newValidations, newWinConditions, newKeepTurnConditions)
         return Game(board, updatedRules, currentPlayer, states)
     }
 
@@ -46,16 +47,23 @@ open class Game(
         val possibleGame = newBoard?.let { Game(it, rules, currentPlayer, states + this) }
         val isValid = possibleGame?.let { Util.isValid(it) }
         val winCondition = possibleGame?.let { verifiedWinCondition(it) }
+        val keepTurnCondition = possibleGame?.let { verifiedKeepTurnCondition(it) }
         return when {
             verifiedMovement == null -> this
             !isValid!! -> this
             winCondition != null -> GameEnded(possibleGame)
+            keepTurnCondition != null -> Game(newBoard, rules, currentPlayer, states + this)
             else -> Game(newBoard, rules, !currentPlayer, states + this)
         }
     }
 
     private fun verifiedWinCondition(game: Game) =
         game.rules.winConditions.find { condition ->
+            condition verify game
+        }
+
+    private fun verifiedKeepTurnCondition(game: Game) =
+        game.rules.keepTurnConditions.find { condition ->
             condition verify game
         }
 

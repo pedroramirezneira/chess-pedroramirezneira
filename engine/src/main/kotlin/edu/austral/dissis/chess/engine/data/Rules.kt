@@ -4,6 +4,7 @@ import edu.austral.dissis.chess.engine.components.movements.AttackMovement
 import edu.austral.dissis.chess.engine.components.movements.InitialMovement
 import edu.austral.dissis.chess.engine.components.movements.PeacefulMovement
 import edu.austral.dissis.chess.engine.components.movements.StandardMovement
+import edu.austral.dissis.chess.engine.interfaces.KeepTurnCondition
 import edu.austral.dissis.chess.engine.interfaces.Movement
 import edu.austral.dissis.chess.engine.interfaces.Validation
 import edu.austral.dissis.chess.engine.interfaces.WinCondition
@@ -13,6 +14,7 @@ data class Rules(
     val movements: List<Movement>,
     val validations: List<Validation>,
     val winConditions: List<WinCondition>,
+    val keepTurnConditions: List<KeepTurnCondition>
 ) {
     companion object {
         infix fun from(pieces: List<PieceData>): Rules {
@@ -39,11 +41,12 @@ data class Rules(
                 }
             val validations: List<Validation> = emptyList()
             val winConditions: List<WinCondition> = emptyList()
-            return Rules(movements, validations, winConditions)
+            val keepTurnConditions: List<KeepTurnCondition> = emptyList()
+            return Rules(movements, validations, winConditions, keepTurnConditions)
         }
 
         fun empty(): Rules {
-            return Rules(emptyList(), emptyList(), emptyList())
+            return Rules(emptyList(), emptyList(), emptyList(), emptyList())
         }
 
         private fun movement(

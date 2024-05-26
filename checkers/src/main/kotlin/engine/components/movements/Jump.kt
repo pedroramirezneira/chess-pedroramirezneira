@@ -7,7 +7,7 @@ import edu.austral.dissis.chess.engine.interfaces.IGame
 import edu.austral.dissis.chess.engine.interfaces.Movement
 import kotlin.math.abs
 
-class Jump(private val color: Boolean) : Movement {
+internal class Jump(private val color: Boolean) : Movement {
     override fun verify(coordinates: Pair<Coordinate, Coordinate>, game: IGame): Boolean {
         val from = coordinates.first
         val to = coordinates.second
