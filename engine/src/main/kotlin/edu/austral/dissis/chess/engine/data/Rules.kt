@@ -14,7 +14,7 @@ data class Rules(
     val movements: List<Movement>,
     val validations: List<Validation>,
     val winConditions: List<WinCondition>,
-    val keepTurnConditions: List<KeepTurnCondition>
+    val keepTurnConditions: List<KeepTurnCondition>,
 ) {
     companion object {
         infix fun from(pieces: List<PieceData>): Rules {

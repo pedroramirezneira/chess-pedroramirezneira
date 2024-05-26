@@ -6,6 +6,8 @@ import edu.austral.dissis.chess.engine.components.keepturnconditions.CanJumpAgai
 import edu.austral.dissis.chess.engine.components.movements.KingJump
 import edu.austral.dissis.chess.engine.components.movements.ManJump
 import edu.austral.dissis.chess.engine.components.movements.Promotion
+import edu.austral.dissis.chess.engine.components.winconditions.AllPiecesObstructed
+import edu.austral.dissis.chess.engine.components.winconditions.NoPiecesLeft
 import edu.austral.dissis.chess.engine.data.P
 import edu.austral.dissis.chess.engine.interfaces.IGame
 import edu.austral.dissis.chess.gui.BoardSize
@@ -67,6 +69,8 @@ class Engine : GameEngine {
             add movement ManJump()
             add movement KingJump()
             add movement Promotion()
+            add winCondition AllPiecesObstructed()
+            add winCondition NoPiecesLeft()
             add keepTurnCondition CanJumpAgain()
         }
     }

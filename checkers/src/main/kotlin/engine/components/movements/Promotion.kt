@@ -5,7 +5,6 @@ import edu.austral.dissis.chess.engine.interfaces.Coordinate
 import edu.austral.dissis.chess.engine.interfaces.IBoard
 import edu.austral.dissis.chess.engine.interfaces.IGame
 import edu.austral.dissis.chess.engine.interfaces.Movement
-import kotlin.math.abs
 
 class Promotion : Movement {
     override fun verify(
@@ -16,18 +15,20 @@ class Promotion : Movement {
         val to = coordinates.second
         val piece = game.board getPiece from
         if (piece?.type != "pawn") return false
-        val verifiedMovement = (game.rules.movements - this).any { movement ->
-            if (game.currentPlayer) {
-                movement.verify(coordinates, game)
-            } else {
-                movement.inverse().verify(coordinates, game)
+        val verifiedMovement =
+            (game.rules.movements - this).any { movement ->
+                if (game.currentPlayer) {
+                    movement.verify(coordinates, game)
+                } else {
+                    movement.inverse().verify(coordinates, game)
+                }
             }
-        }
-        val validVertical = if (game.currentPlayer) {
-            to.y == game.board.size.height - 1
-        } else {
-            to.y == 0
-        }
+        val validVertical =
+            if (game.currentPlayer) {
+                to.y == game.board.size.height - 1
+            } else {
+                to.y == 0
+            }
         return verifiedMovement && validVertical
     }
 

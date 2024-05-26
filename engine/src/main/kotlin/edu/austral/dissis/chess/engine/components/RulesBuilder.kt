@@ -8,9 +8,13 @@ import edu.austral.dissis.chess.engine.interfaces.WinCondition
 
 class RulesBuilder {
     private val movements: MutableList<Movement> = mutableListOf()
+
     private val validations: MutableList<Validation> = mutableListOf()
+
     private val winConditions: MutableList<WinCondition> = mutableListOf()
+
     private val keepTurnConditions: MutableList<KeepTurnCondition> = mutableListOf()
+
     val add = this
 
     infix fun movement(movement: Movement) {
