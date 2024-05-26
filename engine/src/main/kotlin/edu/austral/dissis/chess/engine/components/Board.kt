@@ -93,16 +93,16 @@ class Board(override val size: Size, private val tiles: List<List<Piece?>>) : IB
                     (0 until boardData.height).map { y ->
                         (0 until boardData.width).map { x ->
                             boardData.blackArrangement!!.getOrNull(y)?.getOrNull(x)
-                        }
-                    }
+                        }.reversed()
+                    }.reversed()
                 }
             return (0 until boardData.height).map { y ->
                 (0 until boardData.width).map { x ->
                     val whitePiece = boardData.whiteArrangement.getOrNull(y)?.getOrNull(x)
                     val blackPiece = blackArrangement.getOrNull(y)?.getOrNull(x)
-                    if (whitePiece != null) {
+                    if (whitePiece != null && whitePiece != "null") {
                         Piece(whitePiece, true)
-                    } else if (blackPiece != null) {
+                    } else if (blackPiece != null && blackPiece != "null") {
                         Piece(blackPiece, false)
                     } else {
                         null
