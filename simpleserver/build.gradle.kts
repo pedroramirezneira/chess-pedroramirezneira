@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm")
+    id("application-conventions")
 }
 
 group = "edu.austral.dissis.chess"
@@ -22,6 +23,9 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation(project(":engine"))
+    implementation(project(":chessengine"))
+    implementation ("org.apache.commons:commons-text")
+    implementation("com.google.code.gson:gson:2.10.1")
 }
 
 tasks.test {

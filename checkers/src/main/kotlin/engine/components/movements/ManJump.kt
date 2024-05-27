@@ -24,9 +24,9 @@ class ManJump : Movement {
     ): IBoard {
         val color = game.currentPlayer
         val board = Jump(color).execute(coordinates, game)
-        println()
-        println(coordinates)
-        if (color && coordinates.second.y == game.board.size.height - 1 || !color && coordinates.second.y == 0) {
+        val whiteCanPromote = color && coordinates.second.y == game.board.size.height - 1
+        val blackCanPromote = !color && coordinates.second.y == 0
+        if (whiteCanPromote || blackCanPromote) {
             return board.addPiece(Piece("king", game.currentPlayer), coordinates.second)
         }
         return board

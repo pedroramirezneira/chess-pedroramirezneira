@@ -1,5 +1,7 @@
 plugins {
     kotlin("jvm")
+    id("application-conventions")
+    id("org.openjfx.javafxplugin").version("0.0.13")
 }
 
 group = "edu.austral.dissis.chess"
@@ -22,6 +24,15 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation(project(":engine"))
+    implementation ("org.apache.commons:commons-text")
+    implementation("com.google.code.gson:gson:2.10.1")
+}
+
+javafx {
+    // Define the JavaFX version to use.
+    version = "21"
+    modules = listOf("javafx.graphics")
+
 }
 
 tasks.test {

@@ -6,15 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="0ca9d728-dc89-4779-841b-a4a9d3d7f12c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkers/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/keepturnconditions/CanJumpAgain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/keepturnconditions/CanJumpAgain.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/movements/Jump.kt" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/movements/Jump.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/movements/KingJump.kt" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/movements/KingJump.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/movements/ManJump.kt" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/movements/ManJump.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/movements/Promotion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/movements/Promotion.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkers/src/main/kotlin/ui/Engine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/src/main/kotlin/ui/Engine.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/RulesBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/components/RulesBuilder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/data/Rules.kt" beforeDir="false" afterPath="$PROJECT_DIR$/engine/src/main/kotlin/edu/austral/dissis/chess/engine/data/Rules.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleclient/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/simpleclient/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleclient/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/simpleclient/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleserver/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/simpleserver/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simpleserver/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/simpleserver/src/main/kotlin/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,10 +49,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Data Class" />
         <option value="Kotlin Interface" />
         <option value="Kotlin File" />
         <option value="Class" />
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Object" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -98,12 +96,15 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/pedro/Sandbox/chess-pedroramirezneira/checkers/src/main/kotlin&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/pedro/Sandbox/chess-pedroramirezneira/simpleclient/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -115,6 +116,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pedro\Sandbox\chess-pedroramirezneira\simpleclient\src\main\resources" />
       <recent name="C:\Users\pedro\Sandbox\chess-pedroramirezneira\checkers\src\main\kotlin" />
       <recent name="C:\Users\pedro\Sandbox\chess-pedroramirezneira\checkers\src\main\resources" />
       <recent name="C:\Users\pedro\Sandbox\chess-pedroramirezneira\chessengine\src\main\resources" />
@@ -131,6 +133,29 @@
       <recent name="engine.validations" />
       <recent name="engine.movements" />
     </key>
+  </component>
+  <component name="RunManager" selected="Kotlin.MainKt (1)">
+    <configuration name="MainKt (1)" type="JetRunConfigurationType" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.austral.dissis.chess.MainKt" />
+      <module name="chess.simpleclient.main" />
+      <shortenClasspath name="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.austral.dissis.chess.MainKt" />
+      <module name="chess.simpleserver.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.MainKt (1)" />
+        <item itemvalue="Kotlin.MainKt" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -171,7 +196,9 @@
       <workItem from="1715127786211" duration="531000" />
       <workItem from="1715529339995" duration="1865000" />
       <workItem from="1716670198412" duration="13488000" />
-      <workItem from="1716684011716" duration="4858000" />
+      <workItem from="1716684011716" duration="8436000" />
+      <workItem from="1716744363037" duration="18689000" />
+      <workItem from="1716774232554" duration="2765000" />
     </task>
     <servers />
   </component>
