@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0ca9d728-dc89-4779-841b-a4a9d3d7f12c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/keepturnconditions/CanJumpAgain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/keepturnconditions/CanJumpAgain.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/movements/ManJump.kt" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/movements/ManJump.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simpleclient/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/simpleclient/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simpleclient/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/simpleclient/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simpleserver/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/simpleserver/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simpleserver/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/simpleserver/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/validations/CouldHaveJumped.kt" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/validations/CouldHaveJumped.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +83,7 @@
     &quot;Gradle.UtilTest.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.UtilTest.playerMovements.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.UtilTest.roadBlocked.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.chess-pedroramirezneira [build].executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.ChessKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.MainKt (1).executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.MainKt (2).executor&quot;: &quot;Run&quot;,
@@ -134,7 +130,7 @@
       <recent name="engine.movements" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.MainKt (1)">
+  <component name="RunManager">
     <configuration name="MainKt (1)" type="JetRunConfigurationType" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.austral.dissis.chess.MainKt" />
       <module name="chess.simpleclient.main" />
@@ -152,8 +148,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.MainKt (1)" />
         <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Kotlin.MainKt (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -199,6 +195,9 @@
       <workItem from="1716684011716" duration="8436000" />
       <workItem from="1716744363037" duration="18689000" />
       <workItem from="1716774232554" duration="2765000" />
+      <workItem from="1716925718595" duration="2576000" />
+      <workItem from="1716993176778" duration="3244000" />
+      <workItem from="1717002967237" duration="757000" />
     </task>
     <servers />
   </component>

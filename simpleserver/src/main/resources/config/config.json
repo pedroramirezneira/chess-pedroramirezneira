@@ -1,0 +1,93 @@
+{
+  "board": {
+    "height": 8,
+    "width": 8,
+    "white_color": "white",
+    "black_color": "black",
+    "white_arrangement": [
+      [
+        "pawn",
+        "null",
+        "pawn",
+        "null",
+        "pawn",
+        "null",
+        "pawn",
+        "null"
+      ],
+      [
+        "null",
+        "pawn",
+        "null",
+        "pawn",
+        "null",
+        "pawn",
+        "null",
+        "pawn"
+      ],
+      [
+        "pawn",
+        "null",
+        "pawn",
+        "null",
+        "pawn",
+        "null",
+        "pawn",
+        "null"
+      ]
+    ],
+    "black_arrangement": [
+      [
+        "pawn",
+        "null",
+        "pawn",
+        "null",
+        "pawn",
+        "null",
+        "pawn",
+        "null"
+      ],
+      [
+        "null",
+        "pawn",
+        "null",
+        "pawn",
+        "null",
+        "pawn",
+        "null",
+        "pawn"
+      ],
+      [
+        "pawn",
+        "null",
+        "pawn",
+        "null",
+        "pawn",
+        "null",
+        "pawn",
+        "null"
+      ]
+    ]
+  },
+  "pieces": [
+    {
+      "type": "king",
+      "movement_distance": 1,
+      "movement_vectors": [
+        "1, 1",
+        "-1, 1",
+        "1, -1",
+        "-1, -1"
+      ]
+    },
+    {
+      "type": "pawn",
+      "movement_distance": 1,
+      "movement_vectors": [
+        "1, 1",
+        "-1, 1"
+      ],
+      "attack_vectors": []
+    }
+  ]
+}

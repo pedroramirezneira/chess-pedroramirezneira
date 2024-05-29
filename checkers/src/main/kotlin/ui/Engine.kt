@@ -6,6 +6,7 @@ import edu.austral.dissis.chess.engine.components.keepturnconditions.CanJumpAgai
 import edu.austral.dissis.chess.engine.components.movements.KingJump
 import edu.austral.dissis.chess.engine.components.movements.ManJump
 import edu.austral.dissis.chess.engine.components.movements.Promotion
+import edu.austral.dissis.chess.engine.components.validations.CouldHaveJumped
 import edu.austral.dissis.chess.engine.components.winconditions.AllPiecesObstructed
 import edu.austral.dissis.chess.engine.components.winconditions.NoPiecesLeft
 import edu.austral.dissis.chess.engine.data.P
@@ -69,6 +70,7 @@ class Engine : GameEngine {
             add movement ManJump()
             add movement KingJump()
             add movement Promotion()
+            add validation CouldHaveJumped()
             add winCondition AllPiecesObstructed()
             add winCondition NoPiecesLeft()
             add keepTurnCondition CanJumpAgain()
