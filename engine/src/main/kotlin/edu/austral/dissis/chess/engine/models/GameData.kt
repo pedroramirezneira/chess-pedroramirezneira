@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class GameData(
     val board: BoardData,
-    val pieces: List<PieceData>,
+    val pieces: List<PieceData>?,
 )
 
 data class BoardData(
