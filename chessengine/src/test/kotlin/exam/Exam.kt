@@ -8,6 +8,6 @@ import java.util.stream.Stream
 class Exam {
     @TestFactory
     fun `required exam tests`(): Stream<DynamicTest> {
-        return GameTester(Runner()).test()
+        return GameTester(Runner).test()
     }
 }

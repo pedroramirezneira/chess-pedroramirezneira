@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0ca9d728-dc89-4779-841b-a4a9d3d7f12c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/validations/CouldHaveJumped.kt" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/src/main/kotlin/engine/components/validations/CouldHaveJumped.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +47,8 @@
         <option value="Kotlin File" />
         <option value="Class" />
         <option value="Kotlin Data Class" />
-        <option value="Kotlin Object" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
       </list>
     </option>
   </component>
@@ -75,6 +74,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Gradle.Build chess-pedroramirezneira.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Exam.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Exam.required exam tests (1).executor&quot;: &quot;Debug&quot;,
     &quot;Gradle.Exam.required exam tests.executor&quot;: &quot;Run&quot;,
@@ -146,6 +146,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="chess" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="chess" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.MainKt" />
@@ -198,6 +211,7 @@
       <workItem from="1716925718595" duration="2576000" />
       <workItem from="1716993176778" duration="3244000" />
       <workItem from="1717002967237" duration="757000" />
+      <workItem from="1717524786761" duration="4494000" />
     </task>
     <servers />
   </component>
