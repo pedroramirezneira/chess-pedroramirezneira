@@ -1,13 +1,13 @@
 package com.mediaversetv.chess.components
 
 import com.mediaversetv.chess.data.GameRoom
-import edu.austral.dissis.chess.engine.interfaces.Game
+import edu.austral.dissis.chess.engine.interfaces.IGame
 import io.ktor.websocket.*
 
 object Rooms {
     private val rooms = mutableListOf<GameRoom>()
 
-    infix fun createRoom(game: Game): GameRoom {
+    infix fun createRoom(game: IGame): GameRoom {
         val room = GameRoom(game = game)
         rooms.add(room)
         return room

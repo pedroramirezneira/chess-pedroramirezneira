@@ -25,6 +25,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation(project(":engine"))
+    implementation(project(":chessengine"))
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-server-host-common-jvm")
     implementation("io.ktor:ktor-server-status-pages-jvm")

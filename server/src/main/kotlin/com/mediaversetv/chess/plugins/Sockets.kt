@@ -5,7 +5,7 @@ import com.mediaversetv.chess.components.Rooms
 import com.mediaversetv.chess.components.Util
 import com.mediaversetv.chess.data.GameRoom
 import com.mediaversetv.chess.models.MovementRequest
-import edu.austral.dissis.chess.engine.components.ChessEnded
+import edu.austral.dissis.chess.engine.components.GameEnded
 import io.ktor.server.application.*
 import io.ktor.server.routing.*
 import io.ktor.server.websocket.*
@@ -50,7 +50,7 @@ fun Application.configureSockets() {
                         val state = room.game.moveFrom { coordinates }
                         when (state) {
                             room.game -> outgoing.send(Frame.Text("Update: Invalid move."))
-                            is ChessEnded -> {
+                            is GameEnded -> {
                                 room.game = state
                                 room.notifyListeners()
                                 Rooms deleteRoom room

@@ -1,15 +1,14 @@
 package com.mediaversetv.chess.plugins
 
 import com.mediaversetv.chess.components.Rooms
-import edu.austral.dissis.chess.engine.components.Chess
-import edu.austral.dissis.chess.engine.components.movements.Castling
-import edu.austral.dissis.chess.engine.components.movements.EnPassant
-import edu.austral.dissis.chess.engine.components.movements.Promotion
-import edu.austral.dissis.chess.engine.components.validations.Check
-import edu.austral.dissis.chess.engine.components.winconditions.CheckMate
+import edu.austral.dissis.chess.engine.components.Game
+import edu.austral.dissis.chess.engine.engine.components.movements.Castling
+import edu.austral.dissis.chess.engine.engine.components.movements.EnPassant
+import edu.austral.dissis.chess.engine.engine.components.movements.Promotion
+import edu.austral.dissis.chess.engine.engine.components.validations.Check
+import edu.austral.dissis.chess.engine.engine.components.winconditions.CheckMate
 import io.ktor.http.*
 import io.ktor.server.application.*
-import io.ktor.server.plugins.*
 import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
@@ -34,7 +33,7 @@ fun Application.configureRouting() {
             val resource = Application::class.java.getResourceAsStream("/config/config.json")!!
             val config = resource.readAllBytes().toString(Charsets.UTF_8)
             val arrangement = call.receiveText().ifEmpty { config }
-            val chess = Chess fromJson arrangement changeRules {
+            val chess = Game fromJson arrangement changeRules {
                 add movement Castling()
                 add movement Promotion()
                 add movement EnPassant()

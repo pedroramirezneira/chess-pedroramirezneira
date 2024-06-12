@@ -1,6 +1,6 @@
 package com.mediaversetv.chess.components
 
-import edu.austral.dissis.chess.engine.interfaces.Board
+import edu.austral.dissis.chess.engine.interfaces.IBoard
 import kotlin.random.Random
 
 object Util {
@@ -13,7 +13,7 @@ object Util {
         return code
     }
 
-    fun boardToJson(board: Board): Map<String, Any> {
+    fun boardToJson(board: IBoard): Map<String, Any> {
         return mapOf(
             "board" to mapOf(
                 "height" to board.size.height,

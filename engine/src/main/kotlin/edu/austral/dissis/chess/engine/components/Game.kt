@@ -72,7 +72,7 @@ open class Game(
             val gson = Gson()
             val data = gson.fromJson(json, GameData::class.java)
             val board = Board from data.board
-            val rules = Rules from data.pieces
+            val rules = if (data.pieces == null) Rules.empty() else Rules from data.pieces
             return Game(board, rules, true)
         }
     }
