@@ -28,6 +28,7 @@
             <option value="$PROJECT_DIR$/simpleserver" />
           </set>
         </option>
+        <option name="resolveExternalAnnotations" value="false" />
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/chess-pedroramirezneira" />
@@ -37,6 +38,7 @@
             <option value="$PROJECT_DIR$/chess-pedroramirezneira" />
           </set>
         </option>
+        <option name="resolveExternalAnnotations" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

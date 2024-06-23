@@ -1,11 +1,11 @@
 package edu.austral.dissis.chess.engine.engine.components.movements
 
+import edu.austral.dissis.chess.engine.components.Util
 import edu.austral.dissis.chess.engine.data.Piece
 import edu.austral.dissis.chess.engine.interfaces.Coordinate
 import edu.austral.dissis.chess.engine.interfaces.IBoard
 import edu.austral.dissis.chess.engine.interfaces.IGame
 import edu.austral.dissis.chess.engine.interfaces.Movement
-import kotlin.math.abs
 
 class Promotion : Movement {
     override fun verify(
@@ -13,23 +13,13 @@ class Promotion : Movement {
         game: IGame,
     ): Boolean {
         val from = coordinates.first
+        if (game.board.getPiece(from)?.type != "pawn") return false
         val to = coordinates.second
-        val piece = game.board getPiece from
-        if (piece?.type != "pawn") return false
-        val validVertical =
-            when (piece.color) {
-                true -> to.y - 1 == from.y && to.y == game.board.size.height - 1
-                false -> to.y + 1 == from.y && to.y == 0
-            }
-        val peacefulHorizontal = to.x == from.x
-        val attackHorizontal = abs(from.x - to.x) == 1
-        val opponent = game.board getPiece to
+        val movements = Util.playerMovements(game).filter { it !is Promotion }
         return when {
-            !validVertical -> false
-            peacefulHorizontal -> opponent == null
-            opponent == null -> false
-            attackHorizontal -> opponent.color != piece.color
-            else -> false
+            game.currentPlayer && to.y != game.board.size.height - 1 -> false
+            !game.currentPlayer && to.y != 0 -> false
+            else -> movements.any { it.verify(coordinates, game) }
         }
     }
 

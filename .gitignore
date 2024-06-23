@@ -7,3 +7,5 @@ build
 gradle.properties
 
 server
+
+local.properties

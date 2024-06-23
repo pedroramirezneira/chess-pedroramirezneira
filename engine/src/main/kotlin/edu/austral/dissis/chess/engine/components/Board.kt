@@ -93,8 +93,8 @@ class Board(override val size: Size, private val tiles: List<List<Piece?>>) : IB
                     (0 until boardData.height).map { y ->
                         (0 until boardData.width).map { x ->
                             boardData.blackArrangement!!.getOrNull(y)?.getOrNull(x)
-                        }.reversed()
-                    }.reversed()
+                        }
+                    }
                 }
             return (0 until boardData.height).map { y ->
                 (0 until boardData.width).map { x ->

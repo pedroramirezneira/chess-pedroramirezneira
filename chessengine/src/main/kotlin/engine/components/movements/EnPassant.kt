@@ -48,6 +48,7 @@ class EnPassant : Movement {
         return when {
             piece?.type != "pawn" -> false
             invalidOrigin -> false
+            game.states.lastOrNull() == null -> false
             piece.color -> game.states.last().board getPiece P(coordinate.x, coordinate.y - 2) == piece
             !piece.color -> game.states.last().board getPiece P(coordinate.x, coordinate.y + 2) == piece
             else -> false
