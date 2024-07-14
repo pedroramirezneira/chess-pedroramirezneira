@@ -7,3 +7,5 @@ build
 gradle.properties
 
 server/src/main/resources
+
+local.properties
