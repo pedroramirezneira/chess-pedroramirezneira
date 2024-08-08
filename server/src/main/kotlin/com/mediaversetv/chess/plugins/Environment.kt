@@ -1,5 +1,6 @@
 package com.mediaversetv.chess.plugins
 
+import com.mediaversetv.chess.components.Configuration
 import com.mediaversetv.chess.module
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
@@ -25,14 +26,14 @@ fun configureEnvironment(): ApplicationEngineEnvironment {
     return applicationEngineEnvironment {
         log = LoggerFactory.getLogger("ktor.application")
         connector {
-            port = 8080
+            port = Configuration.httpPort ?: 8080
         }
         sslConnector(
             keyStore = keyStore,
             keyAlias = "sampleAlias",
             keyStorePassword = { "Chess2024.".toCharArray() },
             privateKeyPassword = { "Chess2024.".toCharArray() }) {
-            port = 443
+            port = Configuration.httpsPort ?: 443
             keyStorePath = keyStoreFile
         }
         module(Application::module)

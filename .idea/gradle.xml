@@ -20,11 +20,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/buildSrc" />
-            <option value="$PROJECT_DIR$/checkers" />
             <option value="$PROJECT_DIR$/chessengine" />
             <option value="$PROJECT_DIR$/engine" />
-            <option value="$PROJECT_DIR$/simpleclient" />
-            <option value="$PROJECT_DIR$/simpleserver" />
             <option value="$PROJECT_DIR$/server" />
           </set>
         </option>
