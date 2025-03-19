@@ -2,13 +2,13 @@ package edu.austral.dissis.chess.ui
 
 import edu.austral.dissis.chess.engine.components.Game
 import edu.austral.dissis.chess.engine.components.GameEnded
-import edu.austral.dissis.chess.engine.components.keepturnconditions.CanJumpAgain
+import edu.austral.dissis.chess.engine.components.keepturnconditions.canJumpAgain
 import edu.austral.dissis.chess.engine.components.movements.KingJump
 import edu.austral.dissis.chess.engine.components.movements.ManJump
 import edu.austral.dissis.chess.engine.components.movements.Promotion
-import edu.austral.dissis.chess.engine.components.validations.CouldHaveJumped
-import edu.austral.dissis.chess.engine.components.winconditions.AllPiecesObstructed
-import edu.austral.dissis.chess.engine.components.winconditions.NoPiecesLeft
+import edu.austral.dissis.chess.engine.components.validations.couldHaveJumped
+import edu.austral.dissis.chess.engine.components.winconditions.allPiecesObstructed
+import edu.austral.dissis.chess.engine.components.winconditions.noPiecesLeft
 import edu.austral.dissis.chess.engine.data.P
 import edu.austral.dissis.chess.engine.interfaces.IGame
 import edu.austral.dissis.chess.gui.BoardSize
@@ -70,10 +70,10 @@ class Engine : GameEngine {
             add movement ManJump()
             add movement KingJump()
             add movement Promotion()
-            add validation CouldHaveJumped()
-            add winCondition AllPiecesObstructed()
-            add winCondition NoPiecesLeft()
-            add keepTurnCondition CanJumpAgain()
+            add validation couldHaveJumped
+            add winCondition allPiecesObstructed
+            add winCondition noPiecesLeft
+            add keepTurnCondition canJumpAgain
         }
     }
 

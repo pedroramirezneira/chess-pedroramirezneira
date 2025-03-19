@@ -5,7 +5,7 @@ package edu.austral.dissis.chess.engine.interfaces
  *
  * This interface should be implemented by all Validations to be executed on a Game's state.
  */
-interface Validation {
+fun interface Validation {
     /**
      * Verifies the Game's state after making a Movement.
      * @return whether this Validation is successful.

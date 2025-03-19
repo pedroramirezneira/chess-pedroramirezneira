@@ -5,8 +5,8 @@ import edu.austral.dissis.chess.engine.data.P
 import edu.austral.dissis.chess.engine.engine.components.movements.Castling
 import edu.austral.dissis.chess.engine.engine.components.movements.EnPassant
 import edu.austral.dissis.chess.engine.engine.components.movements.Promotion
-import edu.austral.dissis.chess.engine.engine.components.validations.Check
-import edu.austral.dissis.chess.engine.engine.components.winconditions.CheckMate
+import edu.austral.dissis.chess.engine.engine.components.winconditions.checkMate
+import edu.austral.dissis.chess.engine.engine.components.validations.check
 
 private const val ZERO = 0
 private const val ONE = 1
@@ -22,8 +22,8 @@ fun main() {
             add movement Castling()
             add movement Promotion()
             add movement EnPassant()
-            add validation Check()
-            add winCondition CheckMate()
+            add validation check
+            add winCondition checkMate
         }
     println(game.board.toString())
     println()

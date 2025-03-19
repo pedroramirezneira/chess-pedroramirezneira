@@ -6,8 +6,8 @@ import edu.austral.dissis.chess.engine.data.P
 import edu.austral.dissis.chess.engine.engine.components.movements.Castling
 import edu.austral.dissis.chess.engine.engine.components.movements.EnPassant
 import edu.austral.dissis.chess.engine.engine.components.movements.Promotion
-import edu.austral.dissis.chess.engine.engine.components.validations.Check
-import edu.austral.dissis.chess.engine.engine.components.winconditions.CheckMate
+import edu.austral.dissis.chess.engine.engine.components.validations.check
+import edu.austral.dissis.chess.engine.engine.components.winconditions.checkMate
 import edu.austral.dissis.chess.engine.interfaces.IGame
 import edu.austral.dissis.chess.gui.BoardSize
 import edu.austral.dissis.chess.gui.ChessPiece
@@ -68,8 +68,8 @@ class Engine : GameEngine {
             add movement Castling()
             add movement Promotion()
             add movement EnPassant()
-            add validation Check()
-            add winCondition CheckMate()
+            add validation check
+            add winCondition checkMate
         }
     }
 

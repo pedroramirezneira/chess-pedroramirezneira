@@ -5,7 +5,7 @@ package edu.austral.dissis.chess.engine.interfaces
  *
  * This interface should be implemented by all Win Conditions to be applied to a Game.
  */
-interface WinCondition {
+fun interface WinCondition {
     /**
      * Verifies the Game's end condition.
      * @return whether this Win Condition is satisfied.
